@@ -4,20 +4,37 @@
 @source "../../../content/**/*";
 
 @theme static {
-  --font-sans: 'Instrument Sans', -apple-system, sans-serif;
+  /* Tipografías de marca: Public Sans es la de la aplicación; el serif se usa
+     para titulares, igual que en la vista editorial de Vinculante. */
+  --font-sans: 'Public Sans', -apple-system, sans-serif;
+  --font-serif: 'Source Serif 4', ui-serif, Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  --color-lime-50: #fbfde8;
-  --color-lime-100: #f5fbb3;
-  --color-lime-200: #eef87e;
-  --color-lime-300: #ddf34c;
-  --color-lime-400: #c8f031;
-  --color-lime-500: #a9d316;
-  --color-lime-600: #84a70e;
-  --color-lime-700: #647f11;
-  --color-lime-800: #4f6413;
-  --color-lime-900: #435514;
-  --color-lime-950: #232f06;
+  /* Acento de marca (--ed-accent de la app: #2a8e8e) */
+  --color-teal-50: #f0f8f7;
+  --color-teal-100: #dcefee;
+  --color-teal-200: #bbdedd;
+  --color-teal-300: #8ec7c6;
+  --color-teal-400: #5bacab;
+  --color-teal-500: #2a8e8e;
+  --color-teal-600: #237474;
+  --color-teal-700: #1f5d5e;
+  --color-teal-800: #1c4b4c;
+  --color-teal-900: #1a3f40;
+  --color-teal-950: #0c2526;
+
+  /* Colores del logotipo */
+  --color-brand-indigo: #29235c;
+  --color-brand-blue: #1d71b8;
+
+  /* Paleta editorial (espejo de editorial-theme.css en la app) */
+  --color-paper: #faf7f2;
+  --color-paper-sunken: #f5f2ed;
+  --color-ink: #314158;
+
+  /* Grados de vinculación */
+  --color-degree-alto: #2a8e8e;
+  --color-degree-medio: #2a617d;
 
   --animate-shimmer: shimmer 8s ease-in-out infinite alternate;
 
@@ -31,10 +48,34 @@
   }
 }
 
+/* Tema editorial claro: papel crema + tinta pizarra */
+:root {
+  --ui-bg: var(--color-paper);
+  --ui-bg-muted: var(--color-paper-sunken);
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-accented: #f1eee9;
+  --ui-bg-inverted: var(--color-brand-indigo);
+
+  --ui-border: #e7e2da;
+  --ui-border-muted: #f1eee9;
+  --ui-border-accented: #dcd7ce;
+
+  --ui-text-dimmed: #8b93a0;
+  --ui-text-muted: #5a6472;
+  --ui-text-toned: #5a6472;
+  --ui-text: var(--color-ink);
+  --ui-text-highlighted: var(--color-brand-indigo);
+}
+
 .dark {
-  --ui-bg: var(--ui-color-neutral-950);
-  --ui-bg-muted: var(--ui-color-neutral-900);
-  --ui-bg-elevated: var(--ui-color-neutral-900);
-  --ui-bg-accented: var(--ui-color-neutral-800);
-  --ui-border: var(--ui-color-neutral-900);
+  --ui-bg: #14161f;
+  --ui-bg-muted: #1b1e2a;
+  --ui-bg-elevated: #1b1e2a;
+  --ui-bg-accented: #262a38;
+  --ui-border: #262a38;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
 }

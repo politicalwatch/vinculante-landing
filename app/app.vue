@@ -1,25 +1,25 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
 const { locale, locales } = useI18n()
 const head = useLocaleHead()
 
-const color = computed(() => colorMode.value === 'dark' ? '#09090b' : 'white')
-
-useHead({
+useHead(() => ({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
+    { key: 'theme-color', name: 'theme-color', content: '#faf7f2' },
+    ...(head.value.meta ?? [])
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+    { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+    ...(head.value.link ?? [])
   ],
   htmlAttrs: {
     lang: locales.value.find(item => item.code === locale.value)?.language ?? locale.value
   }
-})
+}))
 
 useSeoMeta({
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
   twitterCard: 'summary_large_image'
 })
 </script>
