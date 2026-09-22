@@ -3,7 +3,8 @@ definePageMeta({
   colorMode: 'dark'
 })
 
-const { data: page } = await useAsyncData('index', () => queryCollection('content').first())
+const { locale } = useI18n()
+const { data: page } = await usePageContent()
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
@@ -15,7 +16,8 @@ useSeoMeta({
   title,
   ogTitle: title,
   description,
-  ogDescription: description
+  ogDescription: description,
+  ogLocale: () => (locale.value === 'es' ? 'es_ES' : 'en_GB')
 })
 
 const heroTitle = computed(() => {

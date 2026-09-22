@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    '@dargmuesli/nuxt-cookie-control'
+    '@dargmuesli/nuxt-cookie-control',
+    '@nuxtjs/i18n'
   ],
 
   devtools: {
@@ -36,7 +37,6 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
       ]
     }
   },
@@ -48,5 +48,16 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  i18n: {
+    baseUrl: 'https://vinculante.ai',
+    defaultLocale: 'es',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    locales: [
+      { code: 'es', language: 'es-ES', name: 'Español' },
+      { code: 'en', language: 'en-GB', name: 'English' }
+    ]
   }
 })
