@@ -1,0 +1,23 @@
+nav:
+  links:
+    - label: Cómo funciona
+      to: '#como-funciona'
+    - label: Qué aporta
+      to: '#que-aporta'
+    - label: Para quién
+      to: '#para-quien'
+  cta:
+    label: Solicitar una demostración
+    to: '#contacto'
+hero:
+  headline: Piloto en curso · Participación ciudadana juvenil
+  links:
+    - label: Solicitar una demostración
+      color: primary
+      size: xl
+      to: '#contacto'
+    - label: Ver cómo funciona
+      size: xl
+      color: neutral
+      variant: subtle
+      to: '#como-funciona'

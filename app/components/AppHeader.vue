@@ -5,20 +5,15 @@ import type { VariantType } from 'motion-v'
 const nuxtApp = useNuxtApp()
 const activeSection = ref<string>()
 
-const items = computed(() => [
-  {
-    label: 'Features',
-    to: '#features',
-    exactHash: true,
-    active: activeSection.value === 'features'
-  },
-  {
-    label: 'Metrics',
-    to: '#metrics',
-    exactHash: true,
-    active: activeSection.value === 'metrics'
-  }
-])
+const { data: page } = await usePageContent()
+
+const sectionIds = ['como-funciona', 'que-aporta', 'para-quien']
+
+const items = computed(() => (page.value?.nav.links ?? []).map(link => ({
+  ...link,
+  exactHash: true,
+  active: `#${activeSection.value}` === link.to
+})))
 
 nuxtApp.hooks.hookOnce('page:loading:end', () => {
   const observer = new IntersectionObserver((entries) => {
@@ -30,7 +25,7 @@ nuxtApp.hooks.hookOnce('page:loading:end', () => {
     }
   }, { rootMargin: '-50% 0px -50% 0px' })
 
-  document.querySelectorAll('#features, #metrics').forEach(el => observer.observe(el))
+  document.querySelectorAll(sectionIds.map(id => `#${id}`).join(', ')).forEach(el => observer.observe(el))
 })
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
@@ -58,14 +53,13 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink
+      <NuxtLinkLocale
         to="/"
         class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
+        aria-label="Vinculante.ai"
       >
         <AppLogo class="h-6 w-auto shrink-0" />
-      </NuxtLink>
-
-      <TemplateMenu />
+      </NuxtLinkLocale>
     </template>
 
     <UNavigationMenu
@@ -74,18 +68,13 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
     />
 
     <template #right>
+      <LocaleSwitcher class="hidden lg:flex" />
+
       <UButton
-        label="Sign in"
-        color="neutral"
-        variant="ghost"
+        v-if="page?.nav.cta"
+        v-bind="page.nav.cta"
+        color="primary"
         class="hidden lg:flex"
-      />
-      <UButton
-        label="Get started"
-        color="neutral"
-        class="hidden lg:flex"
-        to="https://ui.nuxt.com"
-        target="_blank"
       />
     </template>
 
@@ -95,7 +84,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         variant="ghost"
         color="neutral"
         square
-        :aria-label="open ? 'Close navigation' : 'Open navigation'"
+        :aria-label="open ? 'Cerrar navegación' : 'Abrir navegación'"
         :aria-expanded="open"
         :class="ui.toggle({ toggleSide: 'right' })"
         @click="toggle"
@@ -150,19 +139,14 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         orientation="vertical"
       />
 
-      <div class="mt-4 flex flex-col gap-2">
+      <div class="mt-4 flex flex-col gap-3">
         <UButton
-          label="Sign in"
-          color="neutral"
-          variant="soft"
+          v-if="page?.nav.cta"
+          v-bind="page.nav.cta"
+          color="primary"
           block
         />
-        <UButton
-          label="Get started"
-          block
-          to="https://ui.nuxt.com"
-          target="_blank"
-        />
+        <LocaleSwitcher class="justify-center" />
       </div>
     </template>
   </UHeader>

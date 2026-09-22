@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const links = [
-  { label: 'Docs', to: 'https://ui.nuxt.com', target: '_blank' },
-  { label: 'GitHub', to: 'https://github.com/nuxt/ui', target: '_blank' },
-  { label: 'Twitter', to: 'https://twitter.com/nuxt_js', target: '_blank' },
-  { label: 'Status', to: '#' },
-  { label: 'Privacy', to: '#' }
-]
+const { data: page } = await usePageContent()
 </script>
 
 <template>
@@ -17,16 +11,15 @@ const links = [
   >
     <template #left>
       <p class="text-sm text-dimmed">
-        Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        {{ page?.footer.tagline }} © {{ new Date().getFullYear() }}
       </p>
     </template>
 
     <template #right>
       <UButton
-        v-for="link in links"
+        v-for="link in page?.footer.links ?? []"
         :key="link.label"
-        :label="link.label"
-        :to="link.to"
+        v-bind="link"
         color="neutral"
         variant="link"
         class="font-light"

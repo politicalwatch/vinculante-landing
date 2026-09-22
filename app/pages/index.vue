@@ -1,16 +1,17 @@
 <script setup lang="ts">
 definePageMeta({
-  colorMode: 'dark'
+  colorMode: 'light'
 })
 
 const { locale } = useI18n()
 const { data: page } = await usePageContent()
+
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const title = computed(() => page.value?.seo?.title || page.value?.title)
+const description = computed(() => page.value?.seo?.description || page.value?.description)
 
 useSeoMeta({
   title,
@@ -55,7 +56,13 @@ function staggerMotion(index: number = 0) {
   }
 }
 
-const { copy, copied } = useClipboard()
+const sectionUi = {
+  root: 'py-24 sm:py-32 scroll-mt-(--ui-header-height)',
+  container: 'max-w-5xl',
+  headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em] text-center',
+  title: 'max-w-xl mx-auto',
+  description: 'max-w-md mx-auto text-dimmed'
+}
 </script>
 
 <template>
@@ -66,14 +73,14 @@ const { copy, copied } = useClipboard()
         root: 'pb-24 sm:pb-32',
         container: 'relative z-10 lg:py-32',
         wrapper: 'flex flex-col items-center',
-        title: 'sm:text-6xl lg:text-7xl xl:text-[80px] tracking-tighter leading-[1.05]',
+        title: 'sm:text-6xl lg:text-7xl xl:text-[76px] tracking-tight leading-[1.05]',
         description: 'mt-5 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-default',
         links: 'gap-3'
       }"
     >
       <template #top>
         <Motion v-bind="staggerMotion(0)">
-          <HeroShaders class="absolute top-0 inset-x-0 opacity-15 h-full" />
+          <HeroShaders class="absolute top-0 inset-x-0 opacity-20 h-full" />
         </Motion>
 
         <GradientGlow class="top-0 w-2/3 h-1/2" />
@@ -85,7 +92,7 @@ const { copy, copied } = useClipboard()
             color="neutral"
             variant="soft"
             :label="page.hero.headline"
-            class="rounded-full px-3 py-1.5 gap-1.5 bg-white/5 backdrop-blur-sm"
+            class="rounded-full px-3 py-1.5 gap-1.5 bg-elevated/70 backdrop-blur-sm"
           >
             <template #leading>
               <UChip
@@ -108,11 +115,7 @@ const { copy, copied } = useClipboard()
           <br v-if="heroTitle.secondary">
           <span
             v-if="heroTitle.secondary"
-            class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
-            :style="{
-              backgroundImage: 'linear-gradient(135deg, var(--color-primary-400), var(--color-primary-300), var(--color-primary-200), var(--color-primary-100), var(--color-primary-200), var(--color-primary-300), var(--color-primary-400))',
-              animationDuration: '10s'
-            }"
+            class="text-primary-600"
           >
             {{ heroTitle.secondary }}
           </span>
@@ -143,39 +146,100 @@ const { copy, copied } = useClipboard()
       </template>
 
       <Motion
-        as-child
-        v-bind="enterMotion(0.85)"
-        class="max-w-2xl mx-auto w-full"
+        class="flex flex-col items-center gap-3"
+        v-bind="enterMotion(0.8)"
       >
-        <HeroTerminal :lines="page.terminal.lines" />
+        <p class="font-mono uppercase text-xs tracking-[0.12em] text-dimmed">
+          {{ page.logos.title }}
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <ULink
+            v-for="item in page.logos.items"
+            :key="item.label"
+            :to="item.to"
+            target="_blank"
+            :aria-label="item.label"
+            class="opacity-100 transition-opacity hover:opacity-80"
+          >
+            <img
+              v-if="item.logo"
+              :src="item.logo"
+              :alt="item.label"
+              class="h-5 w-auto"
+            >
+            <span
+              v-else
+              class="font-serif text-lg text-muted"
+            >{{ item.label }}</span>
+          </ULink>
+        </div>
       </Motion>
 
-      <Motion
-        class="max-w-lg mx-auto w-full"
-        v-bind="scrollMotion(0.95)"
-      >
-        <UPageLogos
-          :title="page.logos.title"
-          :items="page.logos.items"
-          :ui="{
-            title: 'font-mono uppercase text-xs tracking-[0.12em] text-dimmed',
-            logos: 'gap-0',
-            logo: 'text-muted size-6'
-          }"
-        />
-      </Motion>
+      <div class="max-w-2xl mx-auto w-full">
+        <HeroLinkage :linkage="page.linkage" />
+      </div>
     </UPageHero>
 
-    <!-- Features -->
+    <!-- Cómo funciona -->
     <UPageSection
-      id="features"
-      :ui="{
-        root: 'py-24 sm:py-32 scroll-mt-(--ui-header-height)',
-        container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em] text-center',
-        title: 'max-w-lg mx-auto',
-        description: 'max-w-md mx-auto text-dimmed'
-      }"
+      id="como-funciona"
+      :ui="sectionUi"
+    >
+      <template #headline>
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
+          {{ page.steps.headline }}
+        </Motion>
+      </template>
+
+      <template #title>
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
+          {{ page.steps.title }}
+        </Motion>
+      </template>
+
+      <template #description>
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
+          {{ page.steps.description }}
+        </Motion>
+      </template>
+
+      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-default bg-default sm:grid-cols-2 lg:grid-cols-4">
+        <Motion
+          v-for="(step, index) in page.steps.items"
+          :key="step.title"
+          v-bind="staggerMotion(index)"
+        >
+          <UPageCard
+            :icon="step.icon"
+            :title="step.title"
+            :description="step.description"
+            class="h-full rounded-none duration-300"
+            :ui="{
+              leading: 'mb-5 flex size-9 justify-center rounded-lg bg-primary/10',
+              title: 'text-sm tracking-tight',
+              description: 'text-sm leading-relaxed text-dimmed'
+            }"
+          />
+        </Motion>
+      </div>
+    </UPageSection>
+
+    <!-- Qué aporta -->
+    <UPageSection
+      id="que-aporta"
+      :ui="sectionUi"
     >
       <template #headline>
         <Motion
@@ -218,12 +282,11 @@ const { copy, copied } = useClipboard()
               :icon="feature.icon"
               :title="feature.title"
               :description="feature.description"
-              class="rounded-none duration-300"
-              to="#"
+              class="h-full rounded-none duration-300"
               :ui="{
                 leading: 'mb-5 flex size-9 justify-center rounded-lg bg-primary/10',
                 title: 'text-sm tracking-tight',
-                description: 'text-sm leading-relaxed sm:line-clamp-2 lg:line-clamp-3 text-dimmed'
+                description: 'text-sm leading-relaxed text-dimmed'
               }"
             />
           </Motion>
@@ -231,16 +294,67 @@ const { copy, copied } = useClipboard()
       </div>
     </UPageSection>
 
-    <!-- Metrics -->
+    <!-- Para quién -->
     <UPageSection
-      id="metrics"
-      :ui="{
-        root: 'py-24 sm:py-32 scroll-mt-(--ui-header-height)',
-        container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em] text-center',
-        title: 'max-w-lg mx-auto',
-        description: 'max-w-md mx-auto text-dimmed'
-      }"
+      id="para-quien"
+      :ui="sectionUi"
+    >
+      <template #headline>
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
+          {{ page.audiences.headline }}
+        </Motion>
+      </template>
+
+      <template #title>
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
+          {{ page.audiences.title }}
+        </Motion>
+      </template>
+
+      <template #description>
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
+          {{ page.audiences.description }}
+        </Motion>
+      </template>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <Motion
+          v-for="(audience, index) in page.audiences.items"
+          :key="audience.title"
+          v-bind="staggerMotion(index)"
+        >
+          <UPageCard
+            :icon="audience.icon"
+            :title="audience.title"
+            :description="audience.description"
+            variant="subtle"
+            class="h-full duration-300"
+            :ui="{
+              leading: 'mb-4 flex size-9 justify-center rounded-lg bg-primary/10',
+              title: 'text-base tracking-tight',
+              description: 'text-sm leading-relaxed text-dimmed'
+            }"
+          />
+        </Motion>
+      </div>
+    </UPageSection>
+
+    <!-- Métricas del piloto -->
+    <UPageSection
+      id="piloto"
+      :ui="sectionUi"
     >
       <template #headline>
         <Motion
@@ -282,8 +396,7 @@ const { copy, copied } = useClipboard()
             <UPageCard
               :title="metric.value"
               :description="metric.label"
-              class="rounded-none duration-300"
-              to="#"
+              class="h-full rounded-none duration-300"
               :ui="{
                 root: 'text-center',
                 wrapper: 'items-center',
@@ -294,16 +407,24 @@ const { copy, copied } = useClipboard()
           </Motion>
         </div>
       </div>
+
+      <p
+        v-if="page.metrics.note"
+        class="mt-4 text-center text-xs text-dimmed"
+      >
+        {{ page.metrics.note }}
+      </p>
     </UPageSection>
 
-    <!-- CTA -->
+    <!-- Contacto -->
     <UPageCTA
+      id="contacto"
       variant="naked"
       :ui="{
-        root: 'py-24 sm:py-32',
+        root: 'py-24 sm:py-32 scroll-mt-(--ui-header-height)',
         container: 'max-w-3xl text-center',
-        title: 'lg:text-5xl tracking-tighter whitespace-pre-line',
-        description: 'mx-auto max-w-sm leading-relaxed text-dimmed'
+        title: 'lg:text-5xl tracking-tight whitespace-pre-line',
+        description: 'mx-auto max-w-lg leading-relaxed text-dimmed'
       }"
     >
       <template #top>
@@ -332,7 +453,7 @@ const { copy, copied } = useClipboard()
 
       <template #links>
         <Motion
-          class="flex flex-col items-center justify-center gap-6"
+          class="flex flex-col items-center justify-center gap-8"
           v-bind="scrollMotion(0.2)"
         >
           <UButton
@@ -342,16 +463,7 @@ const { copy, copied } = useClipboard()
             size="xl"
           />
 
-          <UButton
-            :label="page.cta.command"
-            :trailing-icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
-            color="neutral"
-            variant="subtle"
-            class="font-mono font-light text-toned gap-4"
-            size="xl"
-            :ui="{ trailingIcon: 'size-5' }"
-            @click="copy(page.cta.command)"
-          />
+          <NewsletterForm :newsletter="page.cta.newsletter" />
         </Motion>
       </template>
     </UPageCTA>

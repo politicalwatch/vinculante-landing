@@ -1,0 +1,24 @@
+nav:
+  links:
+    - label: How it works
+      to: '#como-funciona'
+    - label: What it does
+      to: '#que-aporta'
+    - label: Who it is for
+      to: '#para-quien'
+  cta:
+    label: Request a demo
+    to: '#contacto'
+
+hero:
+  headline: Pilot in progress · Youth participation process
+  links:
+    - label: Request a demo
+      color: primary
+      size: xl
+      to: '#contacto'
+    - label: See how it works
+      size: xl
+      color: neutral
+      variant: subtle
+      to: '#como-funciona'
