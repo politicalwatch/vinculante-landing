@@ -28,6 +28,32 @@ hero:
       color: neutral
       variant: subtle
       to: '#como-funciona'
+
+# Maqueta ilustrativa del producto que se muestra bajo el hero.
+linkage:
+  documentLabel: Proyecto de Ley de Juventud
+  sectionNumber: Artículo 12
+  sectionTitle: Acceso a la vivienda
+  textBefore: "Las administraciones públicas promoverán medidas específicas que faciliten la emancipación, entre ellas "
+  textHighlight: la reserva de un porcentaje mínimo de vivienda protegida destinada a personas menores de 35 años
+  textAfter: ", en los términos que reglamentariamente se establezcan."
+  connector: Vinculado con
+  degreeLabel: Grado alto
+  proposal:
+    author: Consejo de la Juventud
+    authorType: Sociedad civil
+    text: Reservar un porcentaje mínimo de la vivienda pública de nueva promoción para personas jóvenes, con contratos de alquiler de larga duración y renta referenciada a sus ingresos.
+    groupLabel: 4 entidades presentaron una propuesta equivalente
+  explanationLabel: Por qué se vincula
+  explanation: El artículo incorpora la reserva de vivienda protegida para menores de 35 años que pedía la propuesta. No recoge, en cambio, la referencia de la renta a los ingresos.
+  caption: Ejemplo ilustrativo del resultado que produce el sistema.
+
+logos:
+  title: Un proyecto de
+  items:
+    - label: Political Watch
+      to: https://politicalwatch.es/
+      logo: /logos/political-watch.svg
 footer:
   tagline: Vinculante.ai es un proyecto de Political Watch.
   links:
