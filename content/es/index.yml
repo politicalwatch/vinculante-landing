@@ -1,3 +1,9 @@
+seo:
+  title: Vinculante.ai — De la participación al texto de la ley
+  description: Herramienta de IA que identifica qué aportaciones ciudadanas están recogidas en cada artículo de una norma, con qué grado y por qué. Desarrollada por Political Watch.
+title: "De la participación\nal texto de la ley"
+description: Vinculante.ai analiza las aportaciones de un proceso participativo y señala en qué disposición de la norma ha quedado recogida cada una, con qué grado y con qué justificación. Trazabilidad verificable entre lo que se propuso y lo que se legisló.
+
 nav:
   links:
     - label: Cómo funciona
@@ -9,6 +15,7 @@ nav:
   cta:
     label: Solicitar una demostración
     to: '#contacto'
+
 hero:
   headline: Piloto en curso · Participación ciudadana juvenil
   links:
@@ -21,3 +28,15 @@ hero:
       color: neutral
       variant: subtle
       to: '#como-funciona'
+footer:
+  tagline: Vinculante.ai es un proyecto de Political Watch.
+  links:
+    - label: Political Watch
+      to: https://politicalwatch.es/
+    - label: Contacto
+      to: '#contacto'
+    # PENDIENTE: enlazar las páginas legales cuando existan.
+    - label: Aviso legal
+      to: '#'
+    - label: Privacidad
+      to: '#'

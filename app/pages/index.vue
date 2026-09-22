@@ -146,6 +146,7 @@ const sectionUi = {
       </template>
 
       <Motion
+        v-if="page.logos"
         class="flex flex-col items-center gap-3"
         v-bind="enterMotion(0.8)"
       >
@@ -159,7 +160,7 @@ const sectionUi = {
             :to="item.to"
             target="_blank"
             :aria-label="item.label"
-            class="opacity-100 transition-opacity hover:opacity-80"
+            class="opacity-80 transition-opacity hover:opacity-100"
           >
             <img
               v-if="item.logo"
@@ -175,13 +176,17 @@ const sectionUi = {
         </div>
       </Motion>
 
-      <div class="max-w-2xl mx-auto w-full">
+      <div
+        v-if="page.linkage"
+        class="max-w-2xl mx-auto w-full"
+      >
         <HeroLinkage :linkage="page.linkage" />
       </div>
     </UPageHero>
 
-    <!-- Cómo funciona -->
+    <!-- How it works -->
     <UPageSection
+      v-if="page.steps"
       id="como-funciona"
       :ui="sectionUi"
     >
@@ -215,7 +220,9 @@ const sectionUi = {
         </Motion>
       </template>
 
-      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-default bg-default sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-default bg-default sm:grid-cols-2 lg:grid-cols-4"
+      >
         <Motion
           v-for="(step, index) in page.steps.items"
           :key="step.title"
@@ -236,8 +243,9 @@ const sectionUi = {
       </div>
     </UPageSection>
 
-    <!-- Qué aporta -->
+    <!-- What it does -->
     <UPageSection
+      v-if="page.features"
       id="que-aporta"
       :ui="sectionUi"
     >
@@ -271,7 +279,9 @@ const sectionUi = {
         </Motion>
       </template>
 
-      <div class="rounded-2xl border border-default bg-default overflow-hidden">
+      <div
+        class="rounded-2xl border border-default bg-default overflow-hidden"
+      >
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
           <Motion
             v-for="(feature, index) in page.features.items"
@@ -294,8 +304,9 @@ const sectionUi = {
       </div>
     </UPageSection>
 
-    <!-- Para quién -->
+    <!-- Who it is for -->
     <UPageSection
+      v-if="page.audiences"
       id="para-quien"
       :ui="sectionUi"
     >
@@ -329,7 +340,9 @@ const sectionUi = {
         </Motion>
       </template>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div
+        class="grid grid-cols-1 gap-4 sm:grid-cols-2"
+      >
         <Motion
           v-for="(audience, index) in page.audiences.items"
           :key="audience.title"
@@ -351,8 +364,9 @@ const sectionUi = {
       </div>
     </UPageSection>
 
-    <!-- Métricas del piloto -->
+    <!-- Pilot metrics -->
     <UPageSection
+      v-if="page.metrics"
       id="piloto"
       :ui="sectionUi"
     >
@@ -386,7 +400,9 @@ const sectionUi = {
         </Motion>
       </template>
 
-      <div class="rounded-2xl border border-default bg-default overflow-hidden">
+      <div
+        class="rounded-2xl border border-default bg-default overflow-hidden"
+      >
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px">
           <Motion
             v-for="(metric, index) in page.metrics.items"
@@ -416,8 +432,9 @@ const sectionUi = {
       </p>
     </UPageSection>
 
-    <!-- Contacto -->
+    <!-- Contact -->
     <UPageCTA
+      v-if="page.cta"
       id="contacto"
       variant="naked"
       :ui="{

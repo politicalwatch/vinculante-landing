@@ -4,6 +4,7 @@ const { data: page } = await usePageContent()
 
 <template>
   <UFooter
+    v-if="page?.footer"
     :ui="{
       container: 'border-t border-default lg:py-8',
       right: 'gap-x-0 flex-wrap'
@@ -11,13 +12,13 @@ const { data: page } = await usePageContent()
   >
     <template #left>
       <p class="text-sm text-dimmed">
-        {{ page?.footer.tagline }} © {{ new Date().getFullYear() }}
+        {{ page.footer.tagline }} © {{ new Date().getFullYear() }}
       </p>
     </template>
 
     <template #right>
       <UButton
-        v-for="link in page?.footer.links ?? []"
+        v-for="link in page.footer.links"
         :key="link.label"
         v-bind="link"
         color="neutral"

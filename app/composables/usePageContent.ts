@@ -1,6 +1,6 @@
 /**
- * Contenido de la landing para el idioma activo.
- * Cada idioma es una colección de @nuxt/content (content/es, content/en).
+ * Landing content for the active locale.
+ * Each locale is its own @nuxt/content collection (content/es, content/en).
  */
 export function usePageContent() {
   const { locale } = useI18n()

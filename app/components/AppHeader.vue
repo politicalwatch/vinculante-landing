@@ -2,6 +2,7 @@
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
 
+const { t } = useI18n()
 const nuxtApp = useNuxtApp()
 const activeSection = ref<string>()
 
@@ -71,7 +72,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       <LocaleSwitcher class="hidden lg:flex" />
 
       <UButton
-        v-if="page?.nav.cta"
+        v-if="page?.nav"
         v-bind="page.nav.cta"
         color="primary"
         class="hidden lg:flex"
@@ -84,7 +85,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         variant="ghost"
         color="neutral"
         square
-        :aria-label="open ? 'Cerrar navegación' : 'Abrir navegación'"
+        :aria-label="open ? t('nav.close') : t('nav.open')"
         :aria-expanded="open"
         :class="ui.toggle({ toggleSide: 'right' })"
         @click="toggle"
@@ -141,7 +142,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 
       <div class="mt-4 flex flex-col gap-3">
         <UButton
-          v-if="page?.nav.cta"
+          v-if="page?.nav"
           v-bind="page.nav.cta"
           color="primary"
           block

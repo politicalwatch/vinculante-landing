@@ -4,13 +4,13 @@
 @source "../../../content/**/*";
 
 @theme static {
-  /* Tipografías de marca: Public Sans es la de la aplicación; el serif se usa
-     para titulares, igual que en la vista editorial de Vinculante. */
+  /* Brand typefaces: Public Sans comes from the app; the serif is used for
+     headings, as in Vinculante's editorial view. */
   --font-sans: 'Public Sans', -apple-system, sans-serif;
   --font-serif: 'Source Serif 4', ui-serif, Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  /* Acento de marca (--ed-accent de la app: #2a8e8e) */
+  /* Brand accent (the app's --ed-accent: #2a8e8e) */
   --color-teal-50: #f0f8f7;
   --color-teal-100: #dcefee;
   --color-teal-200: #bbdedd;
@@ -23,16 +23,16 @@
   --color-teal-900: #1a3f40;
   --color-teal-950: #0c2526;
 
-  /* Colores del logotipo */
+  /* Logo colors */
   --color-brand-indigo: #29235c;
   --color-brand-blue: #1d71b8;
 
-  /* Paleta editorial (espejo de editorial-theme.css en la app) */
+  /* Editorial palette (mirrors editorial-theme.css in the app) */
   --color-paper: #faf7f2;
   --color-paper-sunken: #f5f2ed;
   --color-ink: #314158;
 
-  /* Grados de vinculación */
+  /* Linkage degrees */
   --color-degree-alto: #2a8e8e;
   --color-degree-medio: #2a617d;
 
@@ -48,7 +48,7 @@
   }
 }
 
-/* Tema editorial claro: papel crema + tinta pizarra */
+/* Light editorial theme: cream paper + slate ink */
 :root {
   --ui-bg: var(--color-paper);
   --ui-bg-muted: var(--color-paper-sunken);

@@ -34,7 +34,7 @@ function reveal(delay: number) {
 
 <template>
   <figure class="flex flex-col gap-3">
-    <!-- Disposición del texto normativo -->
+    <!-- Provision of the legal text -->
     <Motion
       as-child
       v-bind="reveal(1)"
@@ -54,7 +54,7 @@ function reveal(delay: number) {
       </div>
     </Motion>
 
-    <!-- Conector -->
+    <!-- Connector -->
     <Motion
       as-child
       v-bind="reveal(1.35)"
@@ -77,7 +77,7 @@ function reveal(delay: number) {
       </div>
     </Motion>
 
-    <!-- Aportación vinculada -->
+    <!-- Linked contribution -->
     <Motion
       as-child
       v-bind="reveal(1.6)"

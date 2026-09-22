@@ -14,27 +14,29 @@ const createLinkSchema = () => z.object({
   variant: createEnum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional()
 })
 
+// Every section is all or nothing: either it is missing from the YAML entirely and
+// the page skips it, or it is present and complete. Only extras are optional here.
 const createCardListSchema = () => z.object({
-  headline: z.string().optional(),
+  headline: z.string().nonempty(),
   title: z.string().nonempty(),
   description: z.string().nonempty(),
   items: z.array(z.object({
-    icon: z.string(),
+    icon: z.string().nonempty(),
     title: z.string().nonempty(),
     description: z.string().nonempty()
-  }))
+  })).min(1)
 })
 
 const pageSchema = z.object({
   nav: z.object({
-    links: z.array(createLinkSchema()),
+    links: z.array(createLinkSchema()).min(1),
     cta: createLinkSchema()
   }),
   hero: z.object({
-    headline: z.string().optional(),
-    links: z.array(createLinkSchema())
+    headline: z.string().nonempty(),
+    links: z.array(createLinkSchema()).min(1)
   }),
-  // Maqueta del hero: un fragmento de articulado y la aportación vinculada
+  // Hero mockup: an excerpt of the legal text and the contribution linked to it
   linkage: z.object({
     documentLabel: z.string().nonempty(),
     sectionNumber: z.string().nonempty(),
@@ -48,40 +50,42 @@ const pageSchema = z.object({
       author: z.string().nonempty(),
       authorType: z.string().nonempty(),
       text: z.string().nonempty(),
+      // Only shown when several organisations submitted the same proposal.
       groupLabel: z.string().optional()
     }),
     explanationLabel: z.string().nonempty(),
     explanation: z.string().nonempty(),
     caption: z.string().optional()
-  }),
+  }).optional(),
   logos: z.object({
     title: z.string().nonempty(),
     items: z.array(z.object({
       label: z.string().nonempty(),
-      to: z.string().optional(),
-      // Ruta a un SVG en public/logos. Si falta, se muestra el label como texto.
+      to: z.string().nonempty(),
+      // Path to an SVG in public/logos. Falls back to the label as text.
       logo: z.string().optional()
-    }))
-  }),
-  features: createCardListSchema(),
-  steps: createCardListSchema(),
-  audiences: createCardListSchema(),
+    })).min(1)
+  }).optional(),
+  features: createCardListSchema().optional(),
+  steps: createCardListSchema().optional(),
+  audiences: createCardListSchema().optional(),
   metrics: z.object({
-    headline: z.string().optional(),
+    headline: z.string().nonempty(),
     title: z.string().nonempty(),
     description: z.string().nonempty(),
+    // Footnote under the figures, e.g. to flag provisional data.
     note: z.string().optional(),
     items: z.array(z.object({
       value: z.string().nonempty(),
       label: z.string().nonempty(),
       class: z.string().nonempty()
-    }))
-  }),
+    })).min(1)
+  }).optional(),
   cta: z.object({
-    headline: z.string().optional(),
+    headline: z.string().nonempty(),
     title: z.string().nonempty(),
     description: z.string().nonempty(),
-    links: z.array(createLinkSchema()),
+    links: z.array(createLinkSchema()).min(1),
     newsletter: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
@@ -89,11 +93,11 @@ const pageSchema = z.object({
       submit: z.string().nonempty(),
       legal: z.string().nonempty()
     })
-  }),
+  }).optional(),
   footer: z.object({
     tagline: z.string().nonempty(),
-    links: z.array(createLinkSchema())
-  })
+    links: z.array(createLinkSchema()).min(1)
+  }).optional()
 })
 
 export const collections = {
