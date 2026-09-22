@@ -16,6 +16,7 @@ const items = computed(() => locales.value.map(item => ({
       :key="item.to"
       :to="item.to"
       :label="item.label"
+      :locale="false"
       color="neutral"
       :variant="item.active ? 'soft' : 'ghost'"
       size="xs"
