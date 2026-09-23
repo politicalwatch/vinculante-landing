@@ -91,7 +91,15 @@ const pageSchema = z.object({
       description: z.string().nonempty(),
       placeholder: z.string().nonempty(),
       submit: z.string().nonempty(),
-      legal: z.string().nonempty()
+      success: z.string().nonempty(),
+      subscribed: z.string().nonempty(),
+      error: z.string().nonempty(),
+      consent: z.string().nonempty(),
+      legal: z.string().nonempty(),
+      privacy: z.object({
+        label: z.string().nonempty(),
+        to: z.string().url()
+      })
     })
   }).optional(),
   footer: z.object({
