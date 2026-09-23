@@ -54,6 +54,111 @@ logos:
     - label: Political Watch
       to: https://politicalwatch.es/
       logo: /logos/political-watch.svg
+
+features:
+  headline: What it does
+  title: A legal text that shows where it came from
+  description: Today nobody can tell which contributions from a participatory process made it into the law. Vinculante.ai makes that relationship explicit, provision by provision.
+  items:
+    - icon: i-lucide-link
+      title: Article-by-article linking
+      description: Every provision shows the contributions behind it, and every contribution shows where it landed. Navigation works in both directions.
+    - icon: i-lucide-gauge
+      title: Degree of incorporation
+      description: Not everything is adopted equally. The system tells substantial adoption apart from partial uptake, so the result is not inflated.
+    - icon: i-lucide-quote
+      title: Reasoning and exact wording
+      description: Each link comes with a written justification and the specific passage of the legal text it refers to. No opaque scores.
+    - icon: i-lucide-languages
+      title: Legal language and plain language
+      description: The system generates a plain-language version of every provision. That is what makes a citizen proposal comparable to a legal text.
+    - icon: i-lucide-search-x
+      title: And what was left out
+      description: Contributions with no reflection in the law are shown too, grouped by topic. Accountability includes what did not make it.
+    - icon: i-lucide-user-check
+      title: Human review before publishing
+      description: No link is published until the responsible team confirms, corrects or discards it. The tool assists; it does not decide.
+
+steps:
+  headline: How it works
+  title: Four steps, from documents to publication
+  description: The process runs once per law and can be repeated whenever the text changes during its parliamentary passage.
+  items:
+    - icon: i-lucide-upload
+      title: 1 · Load the documents
+      description: The contributions from the participatory process (PDFs, spreadsheets or a summary table) and the resulting legal text.
+    - icon: i-lucide-list-tree
+      title: 2 · Structure the law
+      description: The text is split along its legal hierarchy — titles, chapters, articles, final provisions — and each piece gets a plain-language version.
+    - icon: i-lucide-sparkles
+      title: 3 · Detect and verify links
+      description: Semantic search narrows down candidate provisions, and AI verification returns a degree, an explanation and the passage it points to.
+    - icon: i-lucide-shield-check
+      title: 4 · Review and publish
+      description: The responsible team validates the results and publishes the enriched reading of the law, open to anyone.
+
+audiences:
+  headline: Who it is for
+  title: Four ways to read the same text
+  description: The same enriched reading answers different questions depending on who opens it.
+  items:
+    - icon: i-lucide-landmark
+      title: Public administrations
+      description: Close the loop of a participatory process with a documented response, without spending weeks cross-checking contributions against the draft by hand.
+    - icon: i-lucide-scale
+      title: Legislators
+      description: Enter the parliamentary debate knowing what citizen, academic and technical support stands behind each provision on the table.
+    - icon: i-lucide-users
+      title: Citizens and organisations
+      description: Everyone who took part can check what happened to their contribution, without reading two hundred pages of legal drafting.
+    - icon: i-lucide-newspaper
+      title: Media and research
+      description: A searchable source on the origin of each measure, with contributions and their authors identified.
+
+metrics:
+  headline: The pilot
+  title: One draft law, analysed end to end
+  description: First application of the tool to a real youth participation process.
+  note: Provisional figures from the ongoing pilot, pending validation.
+  items:
+    - value: "1,243"
+      label: Contributions analysed
+      class: text-primary
+    - value: "68"
+      label: Provisions in the text
+      class: text-degree-medio
+    - value: "74%"
+      label: Provisions with a link
+      class: text-primary
+    - value: "100%"
+      label: Human-reviewed
+      class: text-degree-medio
+
+cta:
+  headline: Get in touch
+  title: Want to know more?
+  description: If you work in a public administration or an organisation that runs participatory processes, we will walk you through Vinculante.ai in a guided demo and look at whether it fits your case.
+  links:
+    - label: Email the team
+      color: primary
+      icon: i-lucide-mail
+      to: 'mailto:info@politicalwatch.es?subject=Vinculante.ai'
+  newsletter:
+    title: Follow the project
+    description: We will let you know when new results are available or new releases are out. No noise.
+    placeholder: you@email.com
+    submit: Subscribe
+    success: Almost done. We have sent you an email to confirm your subscription.
+    subscribed: This address is already subscribed. Thanks for following the project!
+    error: We could not complete your subscription. Check the address and try again.
+    consent: I want to receive Vinculante.ai updates by email.
+    # Legal copy is delegated to politicalwatch.es until the DPO reviews our own.
+    # Rendered as: "<legal> <privacy.label>."
+    legal: You can unsubscribe at any time. We process your data in accordance with the
+    privacy:
+      label: Political Watch privacy policy
+      # The Political Watch legal pages are only published in Spanish.
+      to: https://politicalwatch.es/politica-de-privacidad/
 footer:
   tagline: Vinculante.ai is a project by Political Watch.
   links:
@@ -62,6 +167,8 @@ footer:
     - label: Contact
       to: '#contacto'
     - label: Legal notice
-      to: '#'
+      to: https://politicalwatch.es/aviso-legal/
     - label: Privacy
-      to: '#'
+      to: https://politicalwatch.es/politica-de-privacidad/
+    - label: Cookies
+      to: https://politicalwatch.es/politica-de-cookies/

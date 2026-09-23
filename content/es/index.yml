@@ -54,6 +54,108 @@ logos:
     - label: Political Watch
       to: https://politicalwatch.es/
       logo: /logos/political-watch.svg
+features:
+  headline: Qué aporta
+  # ALT título: "La trazabilidad que hoy no existe"
+  title: Un texto legal que explica de dónde viene
+  description: Hoy nadie puede saber qué aportaciones de un proceso participativo han acabado en la norma. Vinculante.ai hace explícita esa relación, disposición a disposición.
+  items:
+    - icon: i-lucide-link
+      title: Vinculación artículo a artículo
+      description: Cada disposición muestra las aportaciones que la respaldan, y cada aportación muestra dónde ha quedado recogida. La navegación funciona en los dos sentidos.
+    - icon: i-lucide-gauge
+      title: Grado de incorporación
+      description: No todo se recoge igual. El sistema distingue entre lo incorporado de forma sustancial y lo recogido solo en parte, para no inflar el resultado.
+    - icon: i-lucide-quote
+      title: Explicación y fragmento exacto
+      description: Cada vinculación se acompaña de una justificación razonada y del tramo concreto del texto legal al que se refiere. Nada queda en una puntuación opaca.
+    - icon: i-lucide-languages
+      title: Lenguaje jurídico y lenguaje claro
+      description: El sistema genera una versión en lenguaje accesible de cada disposición. Es lo que permite comparar una propuesta ciudadana con un texto normativo.
+    - icon: i-lucide-search-x
+      title: También lo que no se recogió
+      description: Las aportaciones sin reflejo en la norma se muestran igualmente, agrupadas por temática. La rendición de cuentas incluye lo que quedó fuera.
+    - icon: i-lucide-user-check
+      title: Revisión humana antes de publicar
+      description: Ninguna vinculación se publica sin que el equipo responsable la confirme, corrija o descarte. La herramienta asiste; no decide.
+
+steps:
+  headline: Cómo funciona
+  title: Cuatro pasos, de los documentos a la publicación
+  description: El proceso se ejecuta una vez por norma y se puede repetir cuando el texto cambia durante la tramitación.
+  items:
+    - icon: i-lucide-upload
+      title: 1 · Se cargan los documentos
+      description: Las aportaciones del proceso participativo (PDF, hoja de cálculo o tabla resumen) y el texto normativo resultante.
+    - icon: i-lucide-list-tree
+      title: 2 · Se estructura la norma
+      description: El texto se divide respetando su jerarquía legal —títulos, capítulos, artículos, disposiciones— y de cada pieza se genera una versión en lenguaje claro.
+    - icon: i-lucide-sparkles
+      title: 3 · Se detectan y verifican las vinculaciones
+      description: Búsqueda semántica para localizar las disposiciones candidatas y verificación con IA que devuelve grado, explicación y fragmento señalado.
+    - icon: i-lucide-shield-check
+      title: 4 · Se revisa y se publica
+      description: El equipo responsable valida los resultados y publica la lectura enriquecida de la norma, abierta a cualquier persona.
+
+audiences:
+  headline: Para quién
+  title: Cuatro maneras de usar el mismo texto
+  description: La misma lectura enriquecida responde preguntas distintas según quién la consulte.
+  items:
+    - icon: i-lucide-landmark
+      title: Administraciones
+      description: Cierran el círculo del proceso participativo con una devolución documentada, sin dedicar semanas a cruzar aportaciones con articulado a mano.
+    - icon: i-lucide-scale
+      title: Legisladores
+      description: Llegan a la tramitación sabiendo qué respaldo ciudadano, académico y técnico sostiene cada disposición que van a votar.
+    - icon: i-lucide-users
+      title: Ciudadanía y entidades
+      description: Quien participó puede comprobar qué ha pasado con su aportación, sin leer doscientas páginas de texto jurídico.
+    - icon: i-lucide-newspaper
+      title: Medios e investigación
+      description: Una fuente consultable sobre el origen de cada medida, con las aportaciones y sus autores identificados.
+
+metrics:
+  headline: El piloto
+  title: Un proyecto de ley, analizado por completo
+  description: Primera aplicación de la herramienta sobre un proceso participativo real de participación juvenil.
+  note: Cifras provisionales del piloto en curso, pendientes de validación.
+  items:
+    - value: "1.243"
+      label: Aportaciones analizadas
+      class: text-primary
+    - value: "68"
+      label: Disposiciones del texto
+      class: text-degree-medio
+    - value: "74%"
+      label: Disposiciones con vinculación
+      class: text-primary
+    - value: "100%"
+      label: Revisadas por personas
+      class: text-degree-medio
+
+cta:
+  title: ¿Quieres saber más?
+  description: Si trabajas en una administración o en una entidad que impulsa procesos de participación, te enseñamos Vinculante.ai en una demostración guiada y vemos contigo si encaja con tu caso.
+  links:
+    - label: Escribir al equipo
+      color: primary
+      icon: i-lucide-mail
+      to: 'mailto:info@politicalwatch.es?subject=Vinculante.ai'
+  newsletter:
+    title: Seguir el proyecto
+    description: Te avisamos cuando publiquemos nuevos resultados y próximas versiones. Sin ruido.
+    placeholder: tu@correo.es
+    submit: Suscribirme
+    success: Casi listo. Te hemos enviado un correo para confirmar la suscripción.
+    subscribed: Esta dirección ya está suscrita. ¡Gracias por seguir el proyecto!
+    error: No hemos podido completar la suscripción. Revisa el correo e inténtalo de nuevo.
+    consent: Quiero recibir por correo las novedades de Vinculante.ai.
+    legal: Puedes darte de baja en cualquier momento. Tratamos tus datos conforme a la
+    privacy:
+      label: política de privacidad de Political Watch
+      to: https://politicalwatch.es/politica-de-privacidad/
+
 footer:
   tagline: Vinculante.ai es un proyecto de Political Watch.
   links:
@@ -63,6 +165,8 @@ footer:
       to: '#contacto'
     # PENDIENTE: enlazar las páginas legales cuando existan.
     - label: Aviso legal
-      to: '#'
+      to: https://politicalwatch.es/aviso-legal/
     - label: Privacidad
-      to: '#'
+      to: https://politicalwatch.es/politica-de-privacidad/
+    - label: Cookies
+      to: https://politicalwatch.es/politica-de-cookies/
