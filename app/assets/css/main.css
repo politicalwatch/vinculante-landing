@@ -80,3 +80,83 @@ h1, h2, h3, .font-display {
   font-family: var(--font-serif);
   letter-spacing: -0.01em;
 }
+
+/* nuxt-cookie-control: colours come from `cookieControl.colors` in nuxt.config;
+   this only swaps its Arial and square buttons for the site's type and radii.
+   Scoped under .cookieControl because the module stylesheet loads after this one. */
+.cookieControl .cookieControl__Bar,
+.cookieControl .cookieControl__Modal > div,
+.cookieControl h2 {
+  font-family: var(--font-sans);
+}
+
+.cookieControl .cookieControl__Bar {
+  border: 1px solid var(--ui-border);
+  border-radius: calc(var(--ui-radius) * 3);
+  box-shadow: var(--shadow-lg);
+}
+
+.cookieControl .cookieControl__Bar h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ui-text-highlighted);
+}
+
+.cookieControl .cookieControl__Bar p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ui-text-muted);
+}
+
+.cookieControl .cookieControl__ModalContent {
+  border-radius: calc(var(--ui-radius) * 3);
+  /* The module forces `scroll`, which leaves an empty scrollbar gutter */
+  overflow-y: auto;
+}
+
+.cookieControl .cookieControl__ModalContent a {
+  color: var(--ui-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookieControl .cookieControl__Bar button,
+.cookieControl .cookieControl__ModalButtons button {
+  border-radius: calc(var(--ui-radius) * 1.5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.875rem;
+}
+
+/* Close: light icon button instead of a solid "Cerrar" one. The module sets
+   the label with v-text and has no slot, so the text stays as the accessible
+   name (font-size: 0) and the X (lucide `x`) is drawn with a mask. */
+.cookieControl .cookieControl__ModalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: 0;
+  border-radius: 9999px;
+  background-color: var(--ui-bg);
+  color: var(--ui-text-muted);
+}
+
+.cookieControl .cookieControl__ModalClose:hover {
+  background-color: var(--ui-primary);
+  color: var(--ui-bg);
+}
+
+.cookieControl .cookieControl__ModalClose::before {
+  content: '';
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+

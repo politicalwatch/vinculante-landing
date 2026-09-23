@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { locale, locales } = useI18n()
+const config = useRuntimeConfig()
 const head = useLocaleHead()
 
 useHead(() => ({
@@ -34,6 +35,9 @@ useSeoMeta({
 
     <AppFooter />
 
-    <CookieBanner />
+    <CookieControl
+      v-if="config.public.gtagId"
+      :locale="locale"
+    />
   </UApp>
 </template>

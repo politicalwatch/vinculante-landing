@@ -4,12 +4,6 @@
     "close": "Close navigation"
   },
   "cookies": {
-    "label": "Cookie notice",
-    "message": "We use Google Analytics to understand the impact of Vinculante.ai and keep improving it. We only turn it on if you consent, and you can change your mind at any time from the footer. More information in the",
-    "policy": "Political Watch cookie policy",
-    "policyUrl": "https://politicalwatch.es/politica-de-cookies/",
-    "accept": "Accept",
-    "reject": "Reject",
     "settings": "Cookie settings"
   }
 }

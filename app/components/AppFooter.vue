@@ -2,7 +2,7 @@
 const { t } = useI18n()
 const config = useRuntimeConfig()
 const { data: page } = await usePageContent()
-const { reset: openCookieSettings } = useCookieConsent()
+const { isModalActive } = useCookieControl()
 </script>
 
 <template>
@@ -37,7 +37,7 @@ const { reset: openCookieSettings } = useCookieConsent()
         variant="link"
         class="font-light"
         size="sm"
-        @click="openCookieSettings"
+        @click="isModalActive = true"
       />
     </template>
   </UFooter>
