@@ -5,6 +5,12 @@ export default defineAppConfig({
       secondary: 'blue',
       neutral: 'slate'
     },
+    header: {
+      slots: {
+        // Opaque white, like the app's header (--ed-surface)
+        root: 'bg-surface backdrop-blur-none'
+      }
+    },
     button: {
       slots: {
         base: 'font-semibold transition-all duration-200'

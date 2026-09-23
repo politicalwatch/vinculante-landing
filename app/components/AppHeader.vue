@@ -59,7 +59,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
         aria-label="Vinculante.ai"
       >
-        <AppLogo class="h-6 w-auto shrink-0" />
+        <AppLogo class="shrink-0" />
       </NuxtLinkLocale>
     </template>
 
