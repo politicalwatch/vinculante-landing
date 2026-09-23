@@ -64,6 +64,15 @@ const sectionUi = {
   title: 'max-w-xl mx-auto',
   description: 'max-w-md mx-auto text-dimmed'
 }
+
+// Horizontal sections (text beside media) align left instead of centring.
+const horizontalSectionUi = {
+  ...sectionUi,
+  headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em]',
+  title: '',
+  description: 'text-dimmed',
+  features: 'gap-5'
+}
 </script>
 
 <template>
@@ -185,10 +194,12 @@ const sectionUi = {
     </UPageHero>
 
     <!-- How it works -->
+    <!-- Steps beside the demo video: the list narrates what the silent video shows. -->
     <UPageSection
       v-if="page.steps"
       id="como-funciona"
-      :ui="sectionUi"
+      orientation="horizontal"
+      :ui="horizontalSectionUi"
     >
       <template #headline>
         <Motion
@@ -220,28 +231,32 @@ const sectionUi = {
         </Motion>
       </template>
 
-      <div
-        class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-default bg-default sm:grid-cols-2 lg:grid-cols-4"
-      >
+      <template #features>
         <Motion
           v-for="(step, index) in page.steps.items"
           :key="step.title"
+          as="li"
           v-bind="staggerMotion(index)"
         >
-          <UPageCard
+          <UPageFeature
             :icon="step.icon"
             :title="step.title"
             :description="step.description"
-            variant="subtle"
-            class="h-full rounded-none duration-300"
             :ui="{
-              leading: 'mb-5 flex size-9 justify-center rounded-lg bg-primary/10',
+              leading: 'flex size-9 justify-center rounded-lg bg-primary/10',
               title: 'text-sm tracking-tight',
               description: 'text-sm leading-relaxed text-dimmed'
             }"
           />
         </Motion>
-      </div>
+      </template>
+
+      <Motion
+        v-if="page.steps.video"
+        v-bind="scrollMotion(0.2)"
+      >
+        <DemoVideo :video="page.steps.video" />
+      </Motion>
     </UPageSection>
 
     <!-- What it does -->

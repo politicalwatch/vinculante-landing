@@ -96,6 +96,13 @@ steps:
     - icon: i-lucide-shield-check
       title: 4 · Se revisa y se publica
       description: El equipo responsable valida los resultados y publica la lectura enriquecida de la norma, abierta a cualquier persona.
+  # PENDIENTE: grabar la demo (20-30 s, sin voz) y dejarla en public/videos/.
+  # Añadir `src: /videos/demo.mp4` y `poster: /videos/demo-poster.jpg` para sustituir el marcador.
+  video:
+    label: Demostración de Vinculante.ai, de la carga de documentos a la lectura enriquecida de la norma.
+    placeholder: Demo en preparación
+    play: Reproducir la demo
+    pause: Pausar la demo
 
 audiences:
   headline: Para quién

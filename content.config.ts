@@ -67,7 +67,18 @@ const pageSchema = z.object({
     })).min(1)
   }).optional(),
   features: createCardListSchema().optional(),
-  steps: createCardListSchema().optional(),
+  steps: createCardListSchema().extend({
+    // Silent product demo shown next to the steps. Without `src` a placeholder is rendered.
+    video: z.object({
+      src: z.string().optional(),
+      poster: z.string().optional(),
+      // Describes what the video shows: it has no voiceover, so this is its text alternative.
+      label: z.string().nonempty(),
+      placeholder: z.string().nonempty(),
+      play: z.string().nonempty(),
+      pause: z.string().nonempty()
+    }).optional()
+  }).optional(),
   audiences: createCardListSchema().optional(),
   metrics: z.object({
     headline: z.string().nonempty(),

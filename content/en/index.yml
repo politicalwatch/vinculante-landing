@@ -96,6 +96,13 @@ steps:
     - icon: i-lucide-shield-check
       title: 4 · Review and publish
       description: The responsible team validates the results and publishes the enriched reading of the law, open to anyone.
+  # TODO: record the demo (20-30 s, no voiceover) and put it in public/videos/.
+  # Add `src: /videos/demo.mp4` and `poster: /videos/demo-poster.jpg` to replace the placeholder.
+  video:
+    label: Vinculante.ai demo, from uploading the documents to the enriched reading of the law.
+    placeholder: Demo coming soon
+    play: Play the demo
+    pause: Pause the demo
 
 audiences:
   headline: Who it is for
@@ -159,6 +166,7 @@ cta:
       label: Political Watch privacy policy
       # The Political Watch legal pages are only published in Spanish.
       to: https://politicalwatch.es/politica-de-privacidad/
+
 footer:
   tagline: Vinculante.ai is a project by Political Watch.
   links:
