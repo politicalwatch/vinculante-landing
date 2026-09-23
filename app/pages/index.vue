@@ -70,8 +70,7 @@ const horizontalSectionUi = {
   ...sectionUi,
   headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em]',
   title: '',
-  description: 'text-dimmed',
-  features: 'gap-5'
+  description: 'text-dimmed'
 }
 </script>
 
@@ -231,21 +230,19 @@ const horizontalSectionUi = {
         </Motion>
       </template>
 
-      <template #features>
-        <Motion
-          v-for="(step, index) in page.steps.items"
-          :key="step.title"
-          as="li"
-          v-bind="staggerMotion(index)"
-        >
-          <UPageFeature
-            :icon="step.icon"
-            :title="step.title"
-            :description="step.description"
+      <!-- #body instead of #features: the timeline is not a <ul> of UPageFeature. -->
+      <template #body>
+        <Motion v-bind="scrollMotion(0.3)">
+          <!-- Title is as tall as the lg indicator (size-9) and the theme's mt-2 is removed, so the first line centres on the stop. -->
+          <UTimeline
+            :items="page.steps.items"
+            size="lg"
             :ui="{
-              leading: 'flex size-9 justify-center rounded-lg bg-primary/10',
-              title: 'text-sm tracking-tight',
-              description: 'text-sm leading-relaxed text-dimmed'
+              indicator: 'rounded-lg bg-primary/10 text-primary',
+              separator: 'bg-primary/20',
+              wrapper: 'mt-0 pb-8 group-last:pb-0',
+              title: 'flex min-h-9 items-center text-sm tracking-tight',
+              description: 'mt-1 text-sm leading-relaxed text-dimmed'
             }"
           />
         </Motion>
