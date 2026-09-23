@@ -1,5 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const config = useRuntimeConfig()
 const { data: page } = await usePageContent()
+const { reset: openCookieSettings } = useCookieConsent()
 </script>
 
 <template>
@@ -25,6 +28,16 @@ const { data: page } = await usePageContent()
         variant="link"
         class="font-light"
         size="sm"
+      />
+      <!-- Lets visitors withdraw or give consent after the first choice. -->
+      <UButton
+        v-if="config.public.gtagId"
+        :label="t('cookies.settings')"
+        color="neutral"
+        variant="link"
+        class="font-light"
+        size="sm"
+        @click="openCookieSettings"
       />
     </template>
   </UFooter>

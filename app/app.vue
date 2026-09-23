@@ -33,5 +33,7 @@ useSeoMeta({
     </UMain>
 
     <AppFooter />
+
+    <CookieBanner />
   </UApp>
 </template>

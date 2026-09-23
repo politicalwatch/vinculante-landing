@@ -32,6 +32,20 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    public: {
+      // Mailchimp classic form: the `.../subscribe/post?u=...&id=...` URL
+      mailchimpUrl: '',
+      // Honeypot field from the Mailchimp embed: `b_<u>_<id>`
+      mailchimpHoneypot: '',
+      // GDPR "Email" marketing permission ID: `gdpr[<id>]` in the embed
+      mailchimpGdprId: '',
+      contactEmail: 'hola@politicalwatch.es',
+      // Google Analytics 4 measurement ID (`G-...`). Empty: no banner, no analytics.
+      gtagId: ''
+    }
+  },
+
   compatibilityDate: '2026-06-30',
 
   nitro: {
