@@ -126,13 +126,13 @@ metrics:
   description: Primera aplicación de la herramienta sobre el Proyecto de Ley de protección del menor en entornos digitales.
   note: Cifras provisionales del piloto en curso
   items:
-    - value: "1.243"
+    - value: "107"
       label: Aportaciones analizadas
       class: text-primary
-    - value: "68"
+    - value: "15"
       label: Disposiciones del texto
       class: text-degree-medio
-    - value: "74%"
+    - value: "93%"
       label: Disposiciones con vinculación
       class: text-primary
   links:

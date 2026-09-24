@@ -126,13 +126,13 @@ metrics:
   description: First application of the tool to a real youth participation process.
   note: Provisional figures from the ongoing pilot, pending validation.
   items:
-    - value: "1,243"
+    - value: "107"
       label: Contributions analysed
       class: text-primary
-    - value: "68"
+    - value: "15"
       label: Provisions in the text
       class: text-degree-medio
-    - value: "74%"
+    - value: "93%"
       label: Provisions with a link
       class: text-primary
   links:
