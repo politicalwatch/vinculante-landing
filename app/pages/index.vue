@@ -455,11 +455,15 @@ const horizontalSectionUi = {
       v-if="page.cta"
       id="contacto"
       variant="naked"
+      orientation="horizontal"
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
-        container: 'max-w-3xl text-center',
+        // Centered single column on mobile; text left and newsletter right from lg
+        container: 'max-w-5xl lg:gap-16',
+        wrapper: 'text-center lg:text-start',
         title: 'lg:text-5xl tracking-tight whitespace-pre-line',
-        description: 'mx-auto max-w-lg leading-relaxed text-dimmed'
+        description: 'mx-auto lg:mx-0 max-w-lg leading-relaxed text-dimmed',
+        links: 'justify-center lg:justify-start'
       }"
     >
       <template #top>
@@ -488,7 +492,7 @@ const horizontalSectionUi = {
 
       <template #links>
         <Motion
-          class="flex flex-col items-center justify-center gap-8"
+          class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3"
           v-bind="scrollMotion(0.2)"
         >
           <UButton
@@ -497,10 +501,15 @@ const horizontalSectionUi = {
             v-bind="link"
             size="xl"
           />
-
-          <NewsletterForm :newsletter="page.cta.newsletter" />
         </Motion>
       </template>
+
+      <Motion
+        class="flex justify-center lg:justify-end"
+        v-bind="scrollMotion(0.3)"
+      >
+        <NewsletterForm :newsletter="page.cta.newsletter" />
+      </Motion>
     </UPageCTA>
   </div>
 </template>
