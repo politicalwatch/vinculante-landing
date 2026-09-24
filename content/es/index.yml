@@ -123,7 +123,7 @@ audiences:
 metrics:
   headline: El piloto
   title: Un proyecto de ley, analizado por completo
-  description: Primera aplicación de la herramienta sobre el Proyecto de Ley de protección del menor en entornos digitales.
+  description: Primera aplicación de la herramienta, en colaboración con el Ministerio de Juventud e Infancia, sobre el Proyecto de Ley Orgánica para la protección de las personas menores de edad en los entornos digitales.
   note: Cifras provisionales del piloto en curso
   items:
     - value: "107"
