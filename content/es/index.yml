@@ -1,8 +1,8 @@
 seo:
-  title: Vinculante.ai — De la participación al texto de la ley
+  title: Vinculante.ai — La participación que deja huella
   description: Herramienta de IA que identifica qué aportaciones ciudadanas están recogidas en cada artículo de una norma, con qué grado y por qué. Desarrollada por Political Watch.
-title: "De la participación\nal texto de la ley"
-description: Vinculante.ai analiza las aportaciones de un proceso participativo y señala en qué disposición de la norma ha quedado recogida cada una, con qué grado y con qué justificación. Trazabilidad verificable entre lo que se propuso y lo que se legisló.
+title: "La participación\nque deja huella"
+description: Vinculante.ai analiza las aportaciones de un proceso participativo e indentifica de manera automática en qué apartados de la norma ha quedado recogida cada una de ellas, con qué grado y explicando el porqué. Trazabilidad verificable entre lo que se propuso y el texto que finalmente vió la luz.
 
 nav:
   links:
@@ -14,17 +14,49 @@ nav:
       to: '#para-quien'
 
 hero:
-  headline: Piloto en curso · Participación ciudadana juvenil
+  headline: Piloto en curso · Protección del menor en entornos digitales
   links:
-    - label: Solicitar una demostración
+    - label: Solicitar una demo
       color: primary
       size: xl
       to: '#contacto'
-    - label: Ver cómo funciona
+    - label: Cómo funciona
       size: xl
       color: neutral
       variant: subtle
       to: '#como-funciona'
+
+logos:
+  title: Desarrollado por
+  items:
+    - label: Political Watch
+      to: https://politicalwatch.es/
+      logo: /logos/political-watch.svg
+
+steps:
+  headline: Cómo funciona
+  title: Cuatro pasos, de los documentos a la publicación
+  description: El proceso se ejecuta una vez por norma y se puede repetir cada vez que el texto cambie durante la tramitación.
+  items:
+    - icon: i-lucide-upload
+      title: 1 · Se cargan los documentos
+      description: Las aportaciones del proceso participativo (PDF, hoja de cálculo o tabla resumen) y el texto normativo resultante.
+    - icon: i-lucide-list-tree
+      title: 2 · Se estructura la norma
+      description: El texto se divide automáticamente respetando su jerarquía legal —títulos, capítulos, artículos, disposiciones— y de cada pieza se genera una versión en lenguaje claro.
+    - icon: i-lucide-sparkles
+      title: 3 · Se detectan y analizan las vinculaciones
+      description: Búsqueda semántica para localizar las disposiciones candidatas y análisis con IA que devuelve el grado de vinculación, una justificaición y el fragmento identificado.
+    - icon: i-lucide-shield-check
+      title: 4 · Se verifica y se publica
+      description: El equipo responsable del proceso valida los resultados y publica la lectura enriquecida de la norma, abierta a cualquier persona interesada.
+  # PENDIENTE: grabar la demo (20-30 s, sin voz) y dejarla en public/videos/.
+  # Añadir `src: /videos/demo.mp4` y `poster: /videos/demo-poster.jpg` para sustituir el marcador.
+  video:
+    label: Demostración de Vinculante.ai, de la carga de documentos a la lectura enriquecida de la norma.
+    placeholder: Demo en preparación
+    play: Reproducir la demo
+    pause: Pausar la demo
 
 # Maqueta ilustrativa del producto que se muestra bajo los pasos y el vídeo.
 linkage:
@@ -45,76 +77,45 @@ linkage:
   explanation: El artículo incorpora la reserva de vivienda protegida para menores de 35 años que pedía la propuesta. No recoge, en cambio, la referencia de la renta a los ingresos.
   caption: Ejemplo ilustrativo del resultado que produce el sistema.
 
-logos:
-  title: Un proyecto de
-  items:
-    - label: Political Watch
-      to: https://politicalwatch.es/
-      logo: /logos/political-watch.svg
 features:
   headline: Qué aporta
   # ALT título: "La trazabilidad que hoy no existe"
-  title: Un texto legal que explica de dónde viene
-  description: Hoy nadie puede saber qué aportaciones de un proceso participativo han acabado en la norma. Vinculante.ai hace explícita esa relación, disposición a disposición.
+  title: Un texto oficial que explica de dónde viene
+  description: Hoy nadie puede saber qué aportaciones de un proceso participativo han acabado en la norma. Vinculante.ai hace explícita y comprensible esa relación, disposición a disposición.
   items:
     - icon: i-lucide-link
       title: Vinculación artículo a artículo
       description: Cada disposición muestra las aportaciones que la respaldan, y cada aportación muestra dónde ha quedado recogida. La navegación funciona en los dos sentidos.
     - icon: i-lucide-gauge
       title: Grado de incorporación
-      description: No todo se recoge igual. El sistema distingue entre lo incorporado de forma sustancial y lo recogido solo en parte, para no inflar el resultado.
+      description: No todo se recoge igual. El sistema distingue entre lo incorporado de forma sustancial y lo recogido solo en parte, para que el resultado sea lo más realista posible.
     - icon: i-lucide-quote
       title: Explicación y fragmento exacto
-      description: Cada vinculación se acompaña de una justificación razonada y del tramo concreto del texto legal al que se refiere. Nada queda en una puntuación opaca.
+      description: Cada vinculación se acompaña de una justificación razonada y del bloque concreto del texto al que se refiere. Nada queda en una puntuación opaca.
     - icon: i-lucide-languages
       title: Lenguaje jurídico y lenguaje claro
-      description: El sistema genera una versión en lenguaje accesible de cada disposición. Es lo que permite comparar una propuesta ciudadana con un texto normativo.
-    - icon: i-lucide-search-x
-      title: También lo que no se recogió
-      description: Las aportaciones sin reflejo en la norma se muestran igualmente, agrupadas por temática. La rendición de cuentas incluye lo que quedó fuera.
+      description: El sistema genera una versión en lenguaje accesible de cada disposición. Es lo que permite que ambos mundos puedan convivir.
+    - icon: i-lucide-summary
+      title: Resumen ejecutivo
+      description: Se ofrece una versión simplificada del análisis para aquellas personas que tengan poco tiempo, con estadísticas y titulares clave.
     - icon: i-lucide-user-check
-      title: Revisión humana antes de publicar
-      description: Ninguna vinculación se publica sin que el equipo responsable la confirme, corrija o descarte. La herramienta asiste; no decide.
-
-steps:
-  headline: Cómo funciona
-  title: Cuatro pasos, de los documentos a la publicación
-  description: El proceso se ejecuta una vez por norma y se puede repetir cuando el texto cambia durante la tramitación.
-  items:
-    - icon: i-lucide-upload
-      title: 1 · Se cargan los documentos
-      description: Las aportaciones del proceso participativo (PDF, hoja de cálculo o tabla resumen) y el texto normativo resultante.
-    - icon: i-lucide-list-tree
-      title: 2 · Se estructura la norma
-      description: El texto se divide respetando su jerarquía legal —títulos, capítulos, artículos, disposiciones— y de cada pieza se genera una versión en lenguaje claro.
-    - icon: i-lucide-sparkles
-      title: 3 · Se detectan y verifican las vinculaciones
-      description: Búsqueda semántica para localizar las disposiciones candidatas y verificación con IA que devuelve grado, explicación y fragmento señalado.
-    - icon: i-lucide-shield-check
-      title: 4 · Se revisa y se publica
-      description: El equipo responsable valida los resultados y publica la lectura enriquecida de la norma, abierta a cualquier persona.
-  # PENDIENTE: grabar la demo (20-30 s, sin voz) y dejarla en public/videos/.
-  # Añadir `src: /videos/demo.mp4` y `poster: /videos/demo-poster.jpg` para sustituir el marcador.
-  video:
-    label: Demostración de Vinculante.ai, de la carga de documentos a la lectura enriquecida de la norma.
-    placeholder: Demo en preparación
-    play: Reproducir la demo
-    pause: Pausar la demo
+      title: Validación humana antes de publicar
+      description: Ninguna vinculación se publica sin que el equipo responsable del proceso la confirme, corrija o descarte. La herramienta asiste, no decide.
 
 audiences:
   headline: Para quién
-  title: Cuatro maneras de usar el mismo texto
+  title: Cuatro maneras de consumir el mismo texto
   description: La misma lectura enriquecida responde preguntas distintas según quién la consulte.
   items:
     - icon: i-lucide-landmark
       title: Administraciones
-      description: Cierran el círculo del proceso participativo con una devolución documentada, sin dedicar semanas a cruzar aportaciones con articulado a mano.
+      description: Cierran el círculo del proceso participativo con una devolución documentada, sin dedicar semanas a cruzar aportaciones con articulod a mano.
     - icon: i-lucide-scale
       title: Legisladores
       description: Llegan a la tramitación sabiendo qué respaldo ciudadano, académico y técnico sostiene cada disposición que van a votar.
     - icon: i-lucide-users
       title: Ciudadanía y entidades
-      description: Quien participó puede comprobar qué ha pasado con su aportación, sin leer doscientas páginas de texto jurídico.
+      description: Cada participante puede comprobar qué ha pasado con sus aportaciones, sin leer doscientas páginas de texto jurídico.
     - icon: i-lucide-newspaper
       title: Medios e investigación
       description: Una fuente consultable sobre el origen de cada medida, con las aportaciones y sus autores identificados.
@@ -122,8 +123,8 @@ audiences:
 metrics:
   headline: El piloto
   title: Un proyecto de ley, analizado por completo
-  description: Primera aplicación de la herramienta sobre un proceso participativo real de participación juvenil.
-  note: Cifras provisionales del piloto en curso, pendientes de validación.
+  description: Primera aplicación de la herramienta sobre el Proyecto de Ley de protección del menor en entornos digitales.
+  note: Cifras provisionales del piloto en curso
   items:
     - value: "1.243"
       label: Aportaciones analizadas
@@ -135,7 +136,7 @@ metrics:
       label: Disposiciones con vinculación
       class: text-primary
   links:
-    - label: Ver la demo en vivo
+    - label: Ver en vivo
       to: https://demo.vinculante.ai
       target: _blank
       size: xl
@@ -145,14 +146,13 @@ metrics:
 
 cta:
   title: ¿Quieres saber más?
-  description: Si trabajas en una administración o en una entidad que impulsa procesos de participación, te enseñamos Vinculante.ai en una demostración guiada y vemos contigo si encaja con tu caso.
+  description: Si trabajas en una administración o en una entidad que impulsa procesos participativos, podemos orgaizar unoa una demostración guiada y ver juntos si Vnculante.ai encaja con tus necesidades.
   links:
-    - label: Solicitar una demostración
+    - label: Solicitar una demo
       color: primary
-      icon: i-lucide-mail
       to: 'mailto:info@politicalwatch.es?subject=Solicitud%20de%20demostraci%C3%B3n%20de%20Vinculante.ai'
   newsletter:
-    title: Seguir el proyecto
+    title: No te pierdas nada
     description: Te avisamos cuando publiquemos nuevos resultados y próximas versiones. Sin ruido.
     placeholder: tu@correo.es
     submit: Suscribirme
