@@ -56,9 +56,9 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
+      // Add '/en' back when English is re-enabled
       routes: [
-        '/',
-        '/en'
+        '/'
       ]
     }
   },
@@ -149,8 +149,9 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
     locales: [
-      { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' },
-      { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' }
+      { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' }
+      // Spanish only at launch; uncomment once the English copy is ready
+      // { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' }
     ]
   }
 })

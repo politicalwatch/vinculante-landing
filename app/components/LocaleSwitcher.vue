@@ -10,7 +10,11 @@ const items = computed(() => locales.value.map(item => ({
 </script>
 
 <template>
-  <div class="flex items-center gap-1">
+  <!-- Hidden while only one locale is enabled -->
+  <div
+    v-if="items.length > 1"
+    class="flex items-center gap-1"
+  >
     <UButton
       v-for="item in items"
       :key="item.to"
