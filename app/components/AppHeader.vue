@@ -2,7 +2,9 @@
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
 
-const { t } = useI18n()
+const { t, locales } = useI18n()
+// Same condition LocaleSwitcher uses to hide itself
+const hasLocaleSwitcher = computed(() => locales.value.length > 1)
 const nuxtApp = useNuxtApp()
 const activeSection = ref<string>()
 
@@ -52,7 +54,8 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 </script>
 
 <template>
-  <UHeader>
+  <!-- Without the switcher the right slot is empty on desktop, so let the menu sit on the right -->
+  <UHeader :ui="hasLocaleSwitcher ? undefined : { right: 'lg:flex-none' }">
     <template #left>
       <NuxtLinkLocale
         to="/"
@@ -70,13 +73,6 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 
     <template #right>
       <LocaleSwitcher class="hidden lg:flex" />
-
-      <UButton
-        v-if="page?.nav"
-        v-bind="page.nav.cta"
-        color="primary"
-        class="hidden lg:flex"
-      />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -140,15 +136,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         orientation="vertical"
       />
 
-      <div class="mt-4 flex flex-col gap-3">
-        <UButton
-          v-if="page?.nav"
-          v-bind="page.nav.cta"
-          color="primary"
-          block
-        />
-        <LocaleSwitcher class="justify-center" />
-      </div>
+      <LocaleSwitcher class="mt-4 justify-center" />
     </template>
   </UHeader>
 </template>

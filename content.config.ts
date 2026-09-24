@@ -29,8 +29,7 @@ const createCardListSchema = () => z.object({
 
 const pageSchema = z.object({
   nav: z.object({
-    links: z.array(createLinkSchema()).min(1),
-    cta: createLinkSchema()
+    links: z.array(createLinkSchema()).min(1)
   }),
   hero: z.object({
     headline: z.string().nonempty(),
