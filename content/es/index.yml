@@ -12,9 +12,6 @@ nav:
       to: '#que-aporta'
     - label: Para quién
       to: '#para-quien'
-  cta:
-    label: Solicitar una demostración
-    to: '#contacto'
 
 hero:
   headline: Piloto en curso · Participación ciudadana juvenil

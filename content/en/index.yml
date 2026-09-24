@@ -13,9 +13,6 @@ nav:
       to: '#que-aporta'
     - label: Who it is for
       to: '#para-quien'
-  cta:
-    label: Request a demo
-    to: '#contacto'
 
 hero:
   headline: Pilot in progress · Youth participation process
