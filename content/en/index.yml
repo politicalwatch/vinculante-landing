@@ -26,7 +26,8 @@ hero:
       color: neutral
       variant: subtle
       to: '#como-funciona'
-# Hero product mockup.
+
+# Product mockup shown under the steps and video.
 linkage:
   documentLabel: Draft Youth Act
   sectionNumber: Article 12

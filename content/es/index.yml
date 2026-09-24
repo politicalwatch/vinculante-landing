@@ -26,7 +26,7 @@ hero:
       variant: subtle
       to: '#como-funciona'
 
-# Maqueta ilustrativa del producto que se muestra bajo el hero.
+# Maqueta ilustrativa del producto que se muestra bajo los pasos y el vídeo.
 linkage:
   documentLabel: Proyecto de Ley de Juventud
   sectionNumber: Artículo 12

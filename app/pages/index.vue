@@ -195,13 +195,6 @@ const metricItemClass = computed(() => [
           </ULink>
         </div>
       </Motion>
-
-      <div
-        v-if="page.linkage"
-        class="max-w-2xl mx-auto w-full"
-      >
-        <HeroLinkage :linkage="page.linkage" />
-      </div>
     </UPageHero>
 
     <!-- How it works -->
@@ -266,6 +259,14 @@ const metricItemClass = computed(() => [
       >
         <DemoVideo :video="page.steps.video" />
       </Motion>
+
+      <!-- Default-slot children are grid items, so this spans both columns below the steps and video -->
+      <div
+        v-if="page.linkage"
+        class="lg:col-span-2 max-w-2xl mx-auto w-full"
+      >
+        <LinkageExample :linkage="page.linkage" />
+      </div>
     </UPageSection>
 
     <!-- What it does -->

@@ -26,7 +26,8 @@ const { linkage } = defineProps<{
 function reveal(delay: number) {
   return {
     initial: { opacity: 0, y: 12 },
-    animate: { opacity: 1, y: 0 },
+    whileInView: { opacity: 1, y: 0 },
+    inViewOptions: { once: true },
     transition: { duration: 0.5, delay }
   }
 }
@@ -37,7 +38,7 @@ function reveal(delay: number) {
     <!-- Provision of the legal text -->
     <Motion
       as-child
-      v-bind="reveal(1)"
+      v-bind="reveal(0)"
     >
       <div class="rounded-xl border border-default bg-elevated/80 p-5 backdrop-blur-sm sm:p-6">
         <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-dimmed">
@@ -57,7 +58,7 @@ function reveal(delay: number) {
     <!-- Connector -->
     <Motion
       as-child
-      v-bind="reveal(1.35)"
+      v-bind="reveal(0.15)"
     >
       <div class="flex items-center justify-center gap-2 text-dimmed">
         <UIcon
@@ -80,7 +81,7 @@ function reveal(delay: number) {
     <!-- Linked contribution -->
     <Motion
       as-child
-      v-bind="reveal(1.6)"
+      v-bind="reveal(0.3)"
     >
       <div class="rounded-xl border border-default bg-elevated/80 p-5 backdrop-blur-sm sm:p-6">
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">

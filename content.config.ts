@@ -35,7 +35,7 @@ const pageSchema = z.object({
     headline: z.string().nonempty(),
     links: z.array(createLinkSchema()).min(1)
   }),
-  // Hero mockup: an excerpt of the legal text and the contribution linked to it
+  // Mockup under the steps and video: an excerpt of the legal text and the contribution linked to it
   linkage: z.object({
     documentLabel: z.string().nonempty(),
     sectionNumber: z.string().nonempty(),
