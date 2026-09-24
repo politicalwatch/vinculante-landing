@@ -1,7 +1,7 @@
 seo:
   title: Vinculante.ai — La participación que deja huella
 title: "La participación\nque deja huella"
-description: Vinculante.ai analiza las aportaciones de un proceso participativo para identificar de manera automática de qué forma han quedado recogidas, con qué grado y explicando el por qué. Trazabilidad verificable entre lo que se propuso y el texto que finalmente vió la luz.
+description: Vinculante.ai analiza las aportaciones de un proceso participativo para identificar de manera automática de qué forma han quedado recogidas, con qué grado y explicando el por qué. Trazabilidad verificable entre lo que se propuso y el texto que finalmente vio la luz.
 
 nav:
   links:
@@ -45,7 +45,7 @@ steps:
       description: El texto se divide automáticamente respetando su jerarquía legal —títulos, capítulos, artículos, disposiciones— y de cada pieza se genera una versión en lenguaje claro.
     - icon: i-lucide-sparkles
       title: 3 · Se detectan y analizan las vinculaciones
-      description: Búsqueda semántica para localizar las disposiciones candidatas y análisis con IA que devuelve el grado de vinculación, una justificaición y el fragmento identificado.
+      description: Búsqueda semántica para localizar las disposiciones candidatas y análisis con IA que devuelve el grado de vinculación, una justificación y el fragmento identificado.
     - icon: i-lucide-shield-check
       title: 4 · Se verifica y se publica
       description: El equipo responsable del proceso valida los resultados y publica la lectura enriquecida de la norma, abierta a cualquier persona interesada.
