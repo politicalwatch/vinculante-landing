@@ -552,5 +552,44 @@ const metricItemClass = computed(() => [
         <NewsletterForm :newsletter="page.cta.newsletter" />
       </Motion>
     </UPageCTA>
+
+    <!-- Funding notice -->
+    <!-- Stacked and centred on mobile; text (40%) beside the logos (60%) from lg -->
+    <section
+      v-if="page.funding"
+      class="border-t border-default"
+    >
+      <UContainer class="max-w-5xl py-10 lg:py-12 grid gap-8 text-center lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-16 lg:text-start">
+        <Motion
+          as="p"
+          v-bind="scrollMotion()"
+          class="text-sm leading-relaxed text-dimmed"
+        >
+          {{ page.funding.textBefore }}<ULink
+            :to="page.funding.link.to"
+            target="_blank"
+            class="font-medium text-default underline underline-offset-2 hover:text-primary"
+          >{{ page.funding.link.label }}</ULink>{{ page.funding.textAfter }}
+        </Motion>
+
+        <!-- Two logos per row, in YAML order -->
+        <div class="grid grid-cols-2 place-items-center gap-6 lg:gap-x-8">
+          <Motion
+            v-for="(logo, index) in page.funding.logos"
+            :key="logo.src"
+            v-bind="staggerMotion(index)"
+          >
+            <img
+              :src="logo.src"
+              :alt="logo.label"
+              :width="logo.width"
+              :height="logo.height"
+              loading="lazy"
+              class="block h-auto max-h-16 w-auto max-w-full"
+            >
+          </Motion>
+        </div>
+      </UContainer>
+    </section>
   </div>
 </template>

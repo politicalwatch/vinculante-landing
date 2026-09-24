@@ -169,6 +169,30 @@ cta:
       # The Political Watch legal pages are only published in Spanish.
       to: https://politicalwatch.es/politica-de-privacidad/
 
+funding:
+  textBefore: "This website was produced under the agreement signed between "
+  link:
+    label: Red.es
+    to: https://www.red.es/
+  textAfter: ", part of the Spanish Ministry for Digital Transformation and the Civil Service, and Political Watch to promote the implementation of the Charter of Digital Rights in the field of participation rights. This work is funded by the Recovery, Transformation and Resilience Plan through the NextGenerationEU funds."
+  logos:
+    - label: NextGenerationEU
+      src: /logos/funding/logo-next-generation.png
+      width: 600
+      height: 170
+    - label: Spanish Ministry for Digital Transformation and the Civil Service
+      src: /logos/funding/logo-ministerio-trans-dig-fun-pub.png
+      width: 600
+      height: 137
+    - label: Red.es
+      src: /logos/funding/logo-red-es.png
+      width: 518
+      height: 227
+    - label: Recovery, Transformation and Resilience Plan
+      src: /logos/funding/logo-plan-rtr.png
+      width: 600
+      height: 276
+
 footer:
   tagline: Vinculante.ai is a project by Political Watch.
   links:

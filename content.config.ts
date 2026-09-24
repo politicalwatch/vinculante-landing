@@ -114,6 +114,22 @@ const pageSchema = z.object({
       })
     })
   }).optional(),
+  // Public funding notice required by the Red.es agreement: text with an inline link, then the institutional logos.
+  funding: z.object({
+    textBefore: z.string(),
+    link: z.object({
+      label: z.string().nonempty(),
+      to: z.string().url()
+    }),
+    textAfter: z.string(),
+    logos: z.array(z.object({
+      label: z.string().nonempty(),
+      // Path to an image in public/logos/funding.
+      src: z.string().nonempty(),
+      width: z.number().int().positive(),
+      height: z.number().int().positive()
+    })).min(1)
+  }).optional(),
   footer: z.object({
     tagline: z.string().nonempty(),
     links: z.array(createLinkSchema()).min(1)

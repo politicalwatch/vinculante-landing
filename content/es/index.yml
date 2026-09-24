@@ -164,6 +164,30 @@ cta:
       label: política de privacidad de Political Watch
       to: https://politicalwatch.es/politica-de-privacidad/
 
+funding:
+  textBefore: "Esta web se ha realizado en el marco del Convenio suscrito entre "
+  link:
+    label: Red.es
+    to: https://www.red.es/
+  textAfter: " del Ministerio para la Transformación Digital y de la Función Pública y Political Watch para el impulso a la implementación de la Carta de Derechos Digitales, en el ámbito de los derechos de participación. Las actuaciones están financiadas por el Plan de Recuperación, Transformación y Resiliencia a través de los fondos NextGenerationEU."
+  logos:
+    - label: NextGenerationEU
+      src: /logos/funding/logo-next-generation.png
+      width: 600
+      height: 170
+    - label: Ministerio para la Transformación Digital y de la Función Pública
+      src: /logos/funding/logo-ministerio-trans-dig-fun-pub.png
+      width: 600
+      height: 137
+    - label: Red.es
+      src: /logos/funding/logo-red-es.png
+      width: 518
+      height: 227
+    - label: Plan de Recuperación, Transformación y Resiliencia
+      src: /logos/funding/logo-plan-rtr.png
+      width: 600
+      height: 276
+
 footer:
   tagline: Vinculante.ai es un proyecto de Political Watch.
   links:
