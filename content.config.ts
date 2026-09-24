@@ -89,7 +89,7 @@ const pageSchema = z.object({
       value: z.string().nonempty(),
       label: z.string().nonempty(),
       class: z.string().nonempty()
-    })).min(1)
+    })).min(2).max(6)
   }).optional(),
   cta: z.object({
     headline: z.string().nonempty(),

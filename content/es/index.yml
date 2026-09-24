@@ -134,9 +134,6 @@ metrics:
     - value: "74%"
       label: Disposiciones con vinculación
       class: text-primary
-    - value: "100%"
-      label: Revisadas por personas
-      class: text-degree-medio
 
 cta:
   title: ¿Quieres saber más?

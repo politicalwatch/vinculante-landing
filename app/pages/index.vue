@@ -72,6 +72,18 @@ const horizontalSectionUi = {
   title: '',
   description: 'text-dimmed'
 }
+
+// Metric cells grow to fill each row, so an odd count never leaves an empty cell.
+// Desktop: one row for up to 4 metrics, rows of 3 for 5 or 6. Tablet: rows of 2.
+const metricBasis: Record<number, string> = {
+  2: 'lg:basis-[calc(50%-1px)]',
+  3: 'lg:basis-[calc(33.333%-1px)]',
+  4: 'lg:basis-[calc(25%-1px)]'
+}
+const metricItemClass = computed(() => [
+  'grow basis-full sm:basis-[calc(50%-1px)]',
+  metricBasis[page.value?.metrics?.items.length ?? 0] ?? 'lg:basis-[calc(33.333%-1px)]'
+])
 </script>
 
 <template>
@@ -419,11 +431,12 @@ const horizontalSectionUi = {
         <div
           class="rounded-2xl border border-default bg-default overflow-hidden"
         >
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px">
+          <div class="flex flex-wrap gap-px">
             <Motion
               v-for="(metric, index) in page.metrics.items"
               :key="metric.label"
               v-bind="staggerMotion(index)"
+              :class="metricItemClass"
             >
               <UPageCard
                 :title="metric.value"

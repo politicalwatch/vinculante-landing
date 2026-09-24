@@ -134,9 +134,6 @@ metrics:
     - value: "74%"
       label: Provisions with a link
       class: text-primary
-    - value: "100%"
-      label: Human-reviewed
-      class: text-degree-medio
 
 cta:
   headline: Get in touch
