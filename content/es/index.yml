@@ -147,10 +147,10 @@ cta:
   title: ¿Quieres saber más?
   description: Si trabajas en una administración o en una entidad que impulsa procesos de participación, te enseñamos Vinculante.ai en una demostración guiada y vemos contigo si encaja con tu caso.
   links:
-    - label: Escribir al equipo
+    - label: Solicitar una demostración
       color: primary
       icon: i-lucide-mail
-      to: 'mailto:info@politicalwatch.es?subject=Vinculante.ai'
+      to: 'mailto:info@politicalwatch.es?subject=Solicitud%20de%20demostraci%C3%B3n%20de%20Vinculante.ai'
   newsletter:
     title: Seguir el proyecto
     description: Te avisamos cuando publiquemos nuevos resultados y próximas versiones. Sin ruido.

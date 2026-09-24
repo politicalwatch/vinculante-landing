@@ -149,10 +149,10 @@ cta:
   title: Want to know more?
   description: If you work in a public administration or an organisation that runs participatory processes, we will walk you through Vinculante.ai in a guided demo and look at whether it fits your case.
   links:
-    - label: Email the team
+    - label: Request a demo
       color: primary
       icon: i-lucide-mail
-      to: 'mailto:info@politicalwatch.es?subject=Vinculante.ai'
+      to: 'mailto:info@politicalwatch.es?subject=Solicitud%20de%20demostraci%C3%B3n%20de%20Vinculante.ai'
   newsletter:
     title: Follow the project
     description: We will let you know when new results are available or new releases are out. No noise.
