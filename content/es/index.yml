@@ -2,7 +2,7 @@ seo:
   title: Vinculante.ai — La participación que deja huella
   description: Herramienta de IA que identifica qué aportaciones ciudadanas están recogidas en cada artículo de una norma, con qué grado y por qué. Desarrollada por Political Watch.
 title: "La participación\nque deja huella"
-description: Vinculante.ai analiza las aportaciones de un proceso participativo e indentifica de manera automática en qué apartados de la norma ha quedado recogida cada una de ellas, con qué grado y explicando el porqué. Trazabilidad verificable entre lo que se propuso y el texto que finalmente vió la luz.
+description: Vinculante.ai analiza las aportaciones de un proceso participativo para identificar de manera automática de qué forma han quedado recogidas, con qué grado y explicando el por qué. Trazabilidad verificable entre lo que se propuso y el texto que finalmente vió la luz.
 
 nav:
   links:
@@ -81,14 +81,14 @@ features:
   headline: Qué aporta
   # ALT título: "La trazabilidad que hoy no existe"
   title: Un texto oficial que explica de dónde viene
-  description: Hoy nadie puede saber qué aportaciones de un proceso participativo han acabado en la norma. Vinculante.ai hace explícita y comprensible esa relación, disposición a disposición.
+  description: Hoy es muy costoso saber qué aportaciones de un proceso participativo han acabado plasmándose en la norma. Vinculante.ai hace explícita y comprensible esa relación, artículo a artículo.
   items:
     - icon: i-lucide-link
       title: Vinculación artículo a artículo
       description: Cada disposición muestra las aportaciones que la respaldan, y cada aportación muestra dónde ha quedado recogida. La navegación funciona en los dos sentidos.
     - icon: i-lucide-gauge
       title: Grado de incorporación
-      description: No todo se recoge igual. El sistema distingue entre lo incorporado de forma sustancial y lo recogido solo en parte, para que el resultado sea lo más realista posible.
+      description: No todo se recoge igual. El sistema distingue entre lo incorporado de forma sustancial y lo recogido solo en parte, para que el análisis sea lo más realista posible.
     - icon: i-lucide-quote
       title: Explicación y fragmento exacto
       description: Cada vinculación se acompaña de una justificación razonada y del bloque concreto del texto al que se refiere. Nada queda en una puntuación opaca.
@@ -109,7 +109,7 @@ audiences:
   items:
     - icon: i-lucide-landmark
       title: Administraciones
-      description: Cierran el círculo del proceso participativo con una devolución documentada, sin dedicar semanas a cruzar aportaciones con articulod a mano.
+      description: Cierran el círculo del proceso participativo con una devolución documentada, sin dedicar semanas a cruzar aportaciones con articulos a mano.
     - icon: i-lucide-scale
       title: Legisladores
       description: Llegan a la tramitación sabiendo qué respaldo ciudadano, académico y técnico sostiene cada disposición que van a votar.
@@ -146,7 +146,7 @@ metrics:
 
 cta:
   title: ¿Quieres saber más?
-  description: Si trabajas en una administración o en una entidad que impulsa procesos participativos, podemos orgaizar unoa una demostración guiada y ver juntos si Vnculante.ai encaja con tus necesidades.
+  description: Si trabajas en una Administración o en una entidad que impulsa procesos participativos, podemos organizar una demostración guiada y ver juntos si Vinculante.ai encaja con tus necesidades.
   links:
     - label: Solicitar una demo
       color: primary
