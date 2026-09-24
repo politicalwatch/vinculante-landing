@@ -89,7 +89,9 @@ const pageSchema = z.object({
       value: z.string().nonempty(),
       label: z.string().nonempty(),
       class: z.string().nonempty()
-    })).min(2).max(6)
+    })).min(2).max(6),
+    // Shown under the description, above the figures, e.g. a link to the live demo.
+    links: z.array(createLinkSchema()).min(1).optional()
   }).optional(),
   cta: z.object({
     headline: z.string().nonempty(),

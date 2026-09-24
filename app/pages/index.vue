@@ -426,6 +426,22 @@ const metricItemClass = computed(() => [
         </Motion>
       </template>
 
+      <template
+        v-if="page.metrics.links"
+        #links
+      >
+        <Motion
+          class="flex flex-wrap justify-center gap-x-6 gap-y-3"
+          v-bind="scrollMotion(0.3)"
+        >
+          <UButton
+            v-for="link in page.metrics.links"
+            :key="link.label"
+            v-bind="link"
+          />
+        </Motion>
+      </template>
+
       <!-- Wrapped so the section's gap does not separate the note from the grid -->
       <div>
         <div

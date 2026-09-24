@@ -134,6 +134,14 @@ metrics:
     - value: "74%"
       label: Disposiciones con vinculación
       class: text-primary
+  links:
+    - label: Ver la demo en vivo
+      to: https://demo.vinculante.ai
+      target: _blank
+      size: xl
+      color: primary
+      variant: subtle
+      trailingIcon: i-lucide-arrow-up-right
 
 cta:
   title: ¿Quieres saber más?
