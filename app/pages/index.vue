@@ -15,10 +15,21 @@ const description = computed(() => page.value?.seo?.description || page.value?.d
 
 useSeoMeta({
   title,
+  // The SEO title already names the site, so skip Nuxt SEO's "%s | Vinculante.ai" template
+  titleTemplate: '%s',
   ogTitle: title,
   description,
   ogDescription: description,
-  ogLocale: () => (locale.value === 'es' ? 'es_ES' : 'en_GB')
+  ogLocale: () => (locale.value === 'es' ? 'es_ES' : 'en_GB'),
+  // Static screenshot of the hero; replace it when the hero changes
+  ogImage: () => ({
+    url: '/og-image.png',
+    width: 1200,
+    height: 630,
+    type: 'image/png',
+    alt: title.value
+  }),
+  twitterImageAlt: title
 })
 
 const heroTitle = computed(() => {

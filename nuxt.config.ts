@@ -17,7 +17,8 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@dargmuesli/nuxt-cookie-control',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo'
   ],
 
   devtools: {
@@ -25,6 +26,12 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  // Nuxt SEO: shared site identity for the sitemap, robots, schema.org and OG image modules
+  site: {
+    url: 'https://vinculante.ai',
+    name: 'Vinculante.ai'
+  },
 
   content: {
     experimental: {
@@ -153,5 +160,19 @@ export default defineNuxtConfig({
       // Spanish only at launch; uncomment once the English copy is ready
       // { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' }
     ]
+  },
+
+  ogImage: {
+    // The social card is a static screenshot of the hero: public/og-image.png
+    enabled: false
+  },
+
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Political Watch',
+      url: 'https://politicalwatch.es',
+      logo: 'https://vinculante.ai/logos/political-watch.svg'
+    }
   }
 })

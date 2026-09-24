@@ -1,6 +1,5 @@
 seo:
   title: Vinculante.ai — From public participation to the text of the law
-  description: An AI tool that identifies which citizen contributions are reflected in each article of a law, to what degree and why. Built by Political Watch.
 
 title: "From participation\nto the text of the law"
 description: Vinculante.ai analyses the contributions made in a participatory process and shows which provision of the law each one ended up in, to what degree and on what grounds. Verifiable traceability between what was proposed and what was legislated.
@@ -175,8 +174,6 @@ footer:
   links:
     - label: Political Watch
       to: https://politicalwatch.es/
-    - label: Contact
-      to: '#contacto'
     - label: Legal notice
       to: https://politicalwatch.es/aviso-legal/
     - label: Privacy
