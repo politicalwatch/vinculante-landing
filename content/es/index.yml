@@ -126,7 +126,7 @@ metrics:
   note: Cifras provisionales del piloto en curso
   items:
     - value: "107"
-      label: Aportaciones analizadas
+      label: Aportaciones
       class: text-primary
     - value: "15"
       label: Artículos
