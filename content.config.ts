@@ -75,7 +75,9 @@ const pageSchema = z.object({
       label: z.string().nonempty(),
       placeholder: z.string().nonempty(),
       play: z.string().nonempty(),
-      pause: z.string().nonempty()
+      pause: z.string().nonempty(),
+      expand: z.string().nonempty(),
+      close: z.string().nonempty()
     }).optional()
   }).optional(),
   audiences: createCardListSchema().optional(),

@@ -96,10 +96,12 @@ steps:
   video:
     src: /videos/demo.mp4
     poster: /videos/demo-poster.jpg
-    label: Vinculante.ai demo, from uploading the documents to the enriched reading of the law.
+    label: Vinculante.ai demo.
     placeholder: Demo coming soon
     play: Play the demo
     pause: Pause the demo
+    expand: Watch the demo full size
+    close: Close
 
 audiences:
   headline: Who it is for
