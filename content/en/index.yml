@@ -28,22 +28,22 @@ hero:
 
 # Product mockup shown under the steps and video.
 linkage:
-  documentLabel: Draft Youth Act
-  sectionNumber: Article 12
-  sectionTitle: Access to housing
-  textBefore: "Public administrations shall promote specific measures to support young people leaving the family home, including "
-  textHighlight: a minimum quota of social housing reserved for people under the age of 35
-  textAfter: ", under the terms to be set by regulation."
+  documentLabel: Draft Orbital Settlements Governance Act
+  sectionNumber: Article 7
+  sectionTitle: Electoral participation of residents
+  textBefore: "Persons permanently resident on Spanish-owned orbital stations "
+  textHighlight: "may exercise their right to vote in elections by electronic means"
+  textAfter: ". The technical conditions shall be set by regulation."
   connector: Linked to
-  degreeLabel: Strong match
+  degreeLabel: Moderate match
   proposal:
-    author: Spanish Youth Council
+    author: Hespérides Station Residents' Association
     authorType: Civil society
-    text: Reserve a minimum share of newly built public housing for young people, with long-term tenancies and rents indexed to their income.
-    groupLabel: 4 organisations submitted an equivalent proposal
+    text: Guarantee the vote of those living in orbit through a verifiable electronic system, with an extended counting period to make up for the communication delay with Earth.
+    groupLabel: 2 organisations submitted an equivalent proposal
   explanationLabel: Why it is linked
-  explanation: The article adopts the reserved quota of social housing for people under 35 that the proposal called for. It does not adopt the request to index rents to income.
-  caption: Illustrative example of the output the system produces.
+  explanation: The article recognises the right to vote from orbit and the electronic channel the proposal called for. It does not include the verifiability of the system or the extended counting period.
+  caption: This law does not exist (yet). This is how Vinculante would show its link to public participation.
 
 logos:
   title: A project by

@@ -59,22 +59,22 @@ steps:
 
 # Maqueta ilustrativa del producto que se muestra bajo los pasos y el vídeo.
 linkage:
-  documentLabel: Proyecto de Ley de Juventud
-  sectionNumber: Artículo 12
-  sectionTitle: Acceso a la vivienda
-  textBefore: "Las administraciones públicas promoverán medidas específicas que faciliten la emancipación, entre ellas "
-  textHighlight: la reserva de un porcentaje mínimo de vivienda protegida destinada a personas menores de 35 años
-  textAfter: ", en los términos que reglamentariamente se establezcan."
+  documentLabel: Proyecto de Ley de Gobernanza de Asentamientos Orbitales
+  sectionNumber: Artículo 7
+  sectionTitle: Participación electoral de las personas residentes
+  textBefore: "Las personas con residencia permanente en estaciones orbitales de titularidad española "
+  textHighlight: "podrán ejercer el derecho de sufragio en los procesos electorales mediante voto electrónico"
+  textAfter: ". Las condiciones técnicas se establecerán reglamentariamente."
   connector: Vinculado con
-  degreeLabel: Grado alto
+  degreeLabel: Grado medio
   proposal:
-    author: Consejo de la Juventud
+    author: Asociación de Residentes de la Estación Hespérides
     authorType: Sociedad civil
-    text: Reservar un porcentaje mínimo de la vivienda pública de nueva promoción para personas jóvenes, con contratos de alquiler de larga duración y renta referenciada a sus ingresos.
-    groupLabel: 4 entidades presentaron una propuesta equivalente
+    text: Garantizar el voto de quienes viven en órbita mediante un sistema electrónico verificable, con un plazo de escrutinio ampliado que compense el retraso en las comunicaciones con la Tierra.
+    groupLabel: 2 entidades presentaron una propuesta equivalente
   explanationLabel: Por qué se vincula
-  explanation: El artículo incorpora la reserva de vivienda protegida para menores de 35 años que pedía la propuesta. No recoge, en cambio, la referencia de la renta a los ingresos.
-  caption: Ejemplo ilustrativo del resultado que produce el sistema.
+  explanation: El artículo reconoce el derecho de voto desde órbita y el canal electrónico que pedía la propuesta. No incluye la verificabilidad del sistema ni la ampliación del plazo de escrutinio.
+  caption: Esta ley no existe (todavía). Así es como Vinculante mostraría su vinculación con la participación ciudadana.
 
 features:
   headline: Qué aporta
