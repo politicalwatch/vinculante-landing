@@ -129,10 +129,10 @@ metrics:
       label: Aportaciones analizadas
       class: text-primary
     - value: "15"
-      label: Disposiciones del texto
+      label: Artículos
       class: text-degree-medio
     - value: "93%"
-      label: Disposiciones con vinculación
+      label: Artículos con vinculación
       class: text-primary
   links:
     - label: Ver en vivo
